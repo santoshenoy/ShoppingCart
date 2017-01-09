@@ -7,10 +7,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Guitar Heaven</title>
+<title>GuitarMania</title>
 <style>
 body {
-	background-color: Orange;
+	background-color: #ff9933;
 }
 </style>
 </head>

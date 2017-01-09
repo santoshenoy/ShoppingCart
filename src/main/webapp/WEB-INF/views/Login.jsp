@@ -7,27 +7,76 @@
 <title>Login</title>
 <style>
 body {
-background-color: powderblue;
+	background-color: #ff9933;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+form {
+background-color: skyblue;
+	border: 3px solid #f1f1f1;
+}
+
+button {
+	background-color: green;
+	color: white;
+	padding: 14px 20px; margin 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+.cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: red;
+}
+
+.container {
+	padding: 16px;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+@media screen and (max-width:300px) {
+	span.psw {
+		display: block;
+		float: none;
+	}
+	.cancelbtn {
+		width: 100%;
+	}
 }
 </style>
 </head>
 <body>
-	Enter your Username and Password below
+	Please enter your Username and Password below
+	
 	<form action="validate" method="post">
-		<table border="1" align="center">
-			<tr>
-				<td>User Name : <input type="text" name="id">
-				</td>
-			</tr>
-			<tr>
-				<td>Password : <input type="password" name="password">
-				</td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="Login"></td>
-				<td><input type="reset" value="Reset"></td>
-			</tr>
-		</table>
+		<div class="container">
+			<label><b>Username</b></label> <input type="text"
+				placeholder="Enter Username" name="id" required> <label><b>Password</b></label>
+			<input type="text" placeholder="Enter Password" name="password"
+				required>
+
+			<button type="submit">Login</button>
+			<input type="checkbox" checked="checked"> Remember Me
+
+		</div>
+		<div class="container" style="background-color: #f1f1f1">
+			<button type="button" class="cancelbtn">Cancel</button>
+			<span class="psw""><a href="#">Forgot password?</a></span>
+		</div>
 	</form>
 </body>
 </html>
