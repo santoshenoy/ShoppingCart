@@ -7,10 +7,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>E-SHOPPING CART</title>
+<title>GuitarMania</title>
 <style>
 body {
-	background-color: Orange;
+	background-color: #ff9933;
 }
 </style>
 </head>
@@ -24,10 +24,10 @@ body {
 	<hr>
 	${successMsg}
 	<c:if test="${showLoginPage}">
-		<jsp:include page="Login.jsp"></jsp:include>
+		<jsp:include page="login.jsp"></jsp:include>
 	</c:if>
 	<c:if test="${showRegistrationPage}">
-		<jsp:include page="Registration.jsp"></jsp:include>
+		<jsp:include page="registration.jsp"></jsp:include>
 	</c:if>
 </body>
 </html>

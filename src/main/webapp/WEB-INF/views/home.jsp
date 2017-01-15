@@ -24,10 +24,10 @@ body {
 	<hr>
 	${successMsg}
 	<c:if test="${showLoginPage}">
-		<jsp:include page="Login.jsp"></jsp:include>
+		<jsp:include page="login.jsp"></jsp:include>
 	</c:if>
 	<c:if test="${showRegistrationPage}">
-		<jsp:include page="Registration.jsp"></jsp:include>
+		<jsp:include page="registration.jsp"></jsp:include>
 	</c:if>
 </body>
 </html>

@@ -20,7 +20,7 @@ input[type=text], input[type=password] {
 }
 
 form {
-background-color: skyblue;
+	background-color: skyblue;
 	border: 3px solid #f1f1f1;
 }
 
@@ -30,13 +30,7 @@ button {
 	padding: 14px 20px; margin 8px 0;
 	border: none;
 	cursor: pointer;
-	width: 100%;
-}
-
-.cancelbtn {
-	width: auto;
-	padding: 10px 18px;
-	background-color: red;
+	width: 10%;
 }
 
 .container {
@@ -45,37 +39,34 @@ button {
 
 span.psw {
 	float: right;
-	padding-top: 16px;
 }
 
-@media screen and (max-width:300px) {
-	span.psw {
-		display: block;
-		float: none;
-	}
-	.cancelbtn {
-		width: 100%;
-	}
+.cancelbtn {
+	background-color: red;
+	color: white;
+	padding: 14px 20px; margin 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 10%;
 }
 </style>
 </head>
 <body>
 	Please enter your Username and Password below
-	
+
 	<form action="validate" method="post">
 		<div class="container">
+
 			<label><b>Username</b></label> <input type="text"
 				placeholder="Enter Username" name="id" required> <label><b>Password</b></label>
-			<input type="text" placeholder="Enter Password" name="password"
+			<input type="password" placeholder="Enter Password" name="password"
 				required>
-
 			<button type="submit">Login</button>
-			<input type="checkbox" checked="checked"> Remember Me
-
+			<button type="button" class="cancelbtn">Cancel</button>
 		</div>
 		<div class="container" style="background-color: #f1f1f1">
-			<button type="button" class="cancelbtn">Cancel</button>
-			<span class="psw""><a href="#">Forgot password?</a></span>
+			<input type="checkbox" checked="checked"> Remember me <span
+				class="psw"><a href="#">Forgot password?</a></span>
 		</div>
 	</form>
 </body>

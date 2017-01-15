@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	
+	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -46,33 +50,26 @@ button {
 </head>
 <body>
 	Please fill in the required details below
-	<form action="registering" method="post">
+	<form:form action="registered" commandName="user" method="post">
 		<div class="container">
-		<label><b>First Name</b></label>
-		<input type="text" placeholder="Enter First Name" name="fname" required>
-		<label><b>Middle Name</b></label>
-	    <input type="text" placeholder="Enter Middle Name" name="mname">
-	    <label><b>Last Name</b></label>
-		<input type="text" placeholder="Enter Last Name" name="lname" required>
-		<label><b>E-Mail Address</b></label>
-		<input type="text" placeholder="Enter Email Address" name="email" required>
-		<label><b>Mobile Number</b></label>
-		<input type="text" placeholder="Enter Mobile Number" name="mobile" required>
-		<label><b>Landline</b></label>
-		<input type="text" placeholder="Enter Landline" name="line" required>
-		<label><b>Address</b></label>
-		<input type="text" placeholder="Enter Address" name="addr" required>
-		<label><b>Pincode</b></label>
-		<input type="text" placeholder="Enter Pincode" name="pcode" required>
-		<label><b>City</b></label>
-		<input type="text" placeholder="Enter City" name="city" required>
-		<label><b>State</b></label>
-		<input type="text" placeholder="Enter State" name="state" required>
-		<label><b>Country</b></label>
-		<input type="text" placeholder="Enter Country" name="cntry" required>
+		<form:label path="name"><b>Name</b></form:label>
+		<form:input type="text" placeholder="Enter Name" path="name" name="name" required="true"/>
+		
+		<form:label path="mail"><b>E-Mail Address</b></form:label>
+		<form:input type="text" placeholder="Enter Email Address" path="mail" name="mail" required="true"/>
+		
+		<form:label path="mobile"><b>Mobile Number</b></form:label>
+		<form:input type="text" placeholder="Enter Mobile Number" path="mobile" name="mobile" required="true"/>
+		
+		<form:label path="password"><b>PASSWORD</b></form:label>
+		<form:input type="text" placeholder="Enter Password" path="password" name="password" required="true"/>
+		
+		<form:label path="id"><b>Enter Username</b></form:label>
+		<form:input type="text" placeholder="Enter Username" path="id" name="id" required="true"/>
+		
 		<button type="submit">Register</button>
 		<button type="button" class="cancelbtn">Cancel</button>
 		</div>
-	</form>
+	</form:form>
 </body>
 </html>
