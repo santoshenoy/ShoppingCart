@@ -29,5 +29,11 @@ body {
 	<c:if test="${showRegistrationPage}">
 		<jsp:include page="registration.jsp"></jsp:include>
 	</c:if>
+	<c:if test="${isAdmin}">
+		<jsp:include page="adminhome.jsp"></jsp:include>
+	</c:if>
+	<c:if test="${isAdminClickedCategories}">
+		<jsp:include page="category.jsp"></jsp:include>
+	</c:if>
 </body>
 </html>

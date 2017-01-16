@@ -43,9 +43,17 @@ public class UserController {
 
 	@RequestMapping("/validate")
 	public ModelAndView validate(@RequestParam("id") String name, @RequestParam("password") String pwd) {
+		log.debug("Starting of the Validate method");
 		ModelAndView mv = new ModelAndView("home");
-		if (userDAO.isValidUser(name, pwd) != null) {
-			mv.addObject("successMsg", "You have logged in successfully");
+		user = userDAO.isValidUser(name, pwd);
+		if (user != null) {
+			if (user.getRole().equals("ROLE_ADMIN")) {
+				mv.addObject("isAdmin", "true");
+				mv.addObject("successMsg", "Hi Admin!");
+			} else {
+				mv.addObject("isAdmin", "false");
+				mv.addObject("successMsg", "Hi User");
+			}
 		} else {
 			mv.addObject("successMsg", "Entered username and/or password not in our records");
 		}
