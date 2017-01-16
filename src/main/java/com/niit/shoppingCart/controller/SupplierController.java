@@ -23,12 +23,12 @@ public class SupplierController {
 	public ModelAndView showRegistrationPage(Model m) {
 		m.addAttribute("supplier", new Supplier());
 		ModelAndView mv = new ModelAndView("supplier");
+		mv.addObject("supplierList", supplierDAO.list());
 		return mv;
 	}
 
 	@RequestMapping(value = "/supplier/add", method = RequestMethod.POST)
 	public String registering(@ModelAttribute("supplier") Supplier supplier) {
-
 		supplierDAO.addSupplier(supplier);
 		ModelAndView mv = new ModelAndView("category");
 		mv.addObject("successMsg", "true");

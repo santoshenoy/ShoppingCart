@@ -20,15 +20,15 @@ public class CategoryController {
 	CategoryDAO categoryDAO;
 
 	@RequestMapping("/category")
-	public ModelAndView showRegistrationPage(Model m) {
+	public ModelAndView showCategoryPage(Model m) {
 		m.addAttribute("category", new Category());
 		ModelAndView mv = new ModelAndView("category");
+		mv.addObject("categoryList", categoryDAO.list());
 		return mv;
 	}
 
 	@RequestMapping(value = "/category/add", method = RequestMethod.POST)
-	public String registering(@ModelAttribute("category") Category category) {
-
+	public String category(@ModelAttribute("category") Category category) {
 		categoryDAO.addCategory(category);
 		ModelAndView mv = new ModelAndView("category");
 		mv.addObject("successMsg", "true");

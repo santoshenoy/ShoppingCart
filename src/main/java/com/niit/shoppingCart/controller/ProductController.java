@@ -23,6 +23,7 @@ public class ProductController {
 	public ModelAndView showRegistrationPage(Model m) {
 		m.addAttribute("product", new Product());
 		ModelAndView mv = new ModelAndView("product");
+		mv.addObject("productList", productDAO.list());
 		return mv;
 	}
 
