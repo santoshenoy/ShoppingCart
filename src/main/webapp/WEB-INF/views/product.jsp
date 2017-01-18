@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -57,44 +58,85 @@ tr:nth-child(even) {
 </head>
 <body>
 	<form:form action="product/add" commandName="product" method="post">
-		<div class="container">
-			<form:label path="id">
-				<b>ID</b>
-			</form:label>
-			<form:input type="text" placeholder="Enter Product ID" path="id"
-				name="id" required="true"/>
-			<form:label path="name">
-				<b>NAME</b>
-			</form:label>
-			<form:input type="text" placeholder="Enter Product Name" path="name"
-				name="name" required="true"/>
-			<form:label path="description">
-				<b>DESCRIPTION</b>
-			</form:label>
-			<form:input type="text" placeholder="Enter Description"
-				path="description" name="description" required="true"/>
-			<form:label path="category_id">
-				<b>CATEGORY_ID</b>
-			</form:label>
-			<form:input type="text" placeholder="Enter Category ID"
-				path="category_id" name="category_id" required="true"/>
-			<form:label path="supplier_id">
-				<b>SUPPLIER_ID</b>
-			</form:label>
-			<form:input type="text" placeholder="Enter Supplier ID"
-				path="supplier_id" name="supplier_id" required="true"/>
-			<form:label path="price">
-				<b>PRICE</b>
-			</form:label>
-			<form:input type="text" placeholder="Enter Price" path="price"
-				name="price" required="true"/>
-			<form:label path="stock">
-				<b>STOCK</b>
-			</form:label>
-			<form:input type="text" placeholder="Enter Stock" path="stock"
-				name="stock" required="true"/>
-			<button type="submit">ADD PRODUCT</button>
-		</div>
+		<table class="table table-condensed">
+			<tr bgcolor=#F0F8FF>
+				<td><form:label style="color:#000000" path="id">
+						<spring:message text="id" />
+					</form:label></td>
+				<c:choose>
+					<c:when test="${!empty product.id}">
+						<td><form:input
+								style="background-color:#F5F5DC;border:0.25px solid black"
+								path="id" disabled="true" readonly="true" /></td>
+					</c:when>
+					<c:otherwise>
+						<td><form:input
+								style="background-color:#F5F5DC;border:0.25px solid black"
+								path="id" pattern=".{4,7}" required="true"
+								title="id should be between 4 to 7 characters" /></td>
+					</c:otherwise>
+				</c:choose>
+			</tr>
+			<tr bgcolor="#F0F8FF">
+				<form:input path="id" hidden="true" />
+				<td><form:label style="color:#000000" path="name">
+						<spring:message text="name" />
+					</form:label></td>
+				<td><form:input
+						style="background-color:#F5F5DC;border:0.25px solid black"
+						path="name" required="true" /></td>
+			</tr>
+			<tr bgcolor="#F0F8FF">
+				<td><form:label style="color:#000000" path="description">
+						<spring:message text="description" />
+					</form:label></td>
+				<td><form:input
+						style="background-color:#F5F5DC;border:0.25px solid black"
+						path="description" required="true" /></td>
+			</tr>
+			<tr bgcolor="#F0F8FF">
+				<td><form:label style="color:#000000" path="category_id">
+						<spring:message text="category_id" />
+					</form:label></td>
+				<td><form:input
+						style="background-color:#F5F5DC;border:0.25px solid black"
+						path="category_id" required="true" /></td>
+			</tr>
+			<tr bgcolor="#F0F8FF">
+				<td><form:label style="color:#000000" path="supplier_id">
+						<spring:message text="supplier_id" />
+					</form:label></td>
+				<td><form:input
+						style="background-color:#F5F5DC;border:0.25px solid black"
+						path="supplier_id" required="true" /></td>
+			</tr>
+			<tr bgcolor="#F0F8FF">
+				<td><form:label style="color:#000000" path="price">
+						<spring:message text="price" />
+					</form:label></td>
+				<td><form:input
+						style="background-color:#F5F5DC;border:0.25px solid black"
+						path="price" required="true" /></td>
+			</tr>
+			<tr bgcolor="#F0F8FF">
+				<td><form:label style="color:#000000" path="stock">
+						<spring:message text="stock" />
+					</form:label></td>
+				<td><form:input
+						style="background-color:#F5F5DC;border:0.25px solid black"
+						path="stock" required="true" /></td>
+			</tr>
+			<tr bgcolor="#F0F8FF">
+				<td align="right" colspan="2"><c:if
+						test="${!empty product.name}">
+						<input style="align: middle" class="btn btn-primary btn-md"
+							type="submit" value="<spring:message text="Edit Product"/>" />
+					</c:if> <c:if test="${empty product.name}">
+						<input style="align: middle" class="btn btn-primary btn-md"
+							type="submit" value="<spring:message text="Add Product"/>" />
+					</c:if></td>
+			</tr>
+		</table>
 	</form:form>
 	<table>
 		<tr>
@@ -105,6 +147,8 @@ tr:nth-child(even) {
 			<th>Supplier_ID</th>
 			<th>Price</th>
 			<th>Stock</th>
+			<th>Edit</th>
+			<th>Delete</th>
 		</tr>
 		<c:forEach items="${productList}" var="product">
 			<tr>
@@ -115,6 +159,10 @@ tr:nth-child(even) {
 				<td>${product.supplier_id}</td>
 				<td>${product.price}</td>
 				<td>${product.stock}</td>
+				<td><a href="<c:url value='product-edit-${product.id}'/>"><input
+						type="button" value="EDIT" /></a></td>
+				<td><a href="<c:url value='product-delete-${product.id}'/>"><input
+						type="button" value="DELETE" /></a></td>
 			</tr>
 		</c:forEach>
 	</table>

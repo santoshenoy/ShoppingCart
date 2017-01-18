@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,10 +29,27 @@ public class CategoryController {
 	}
 
 	@RequestMapping(value = "/category/add", method = RequestMethod.POST)
-	public String category(@ModelAttribute("category") Category category) {
+	public String addCategory(@ModelAttribute("category") Category category) {
 		categoryDAO.addCategory(category);
 		ModelAndView mv = new ModelAndView("category");
 		mv.addObject("successMsg", "true");
 		return "redirect:/category";
+	}
+
+	@RequestMapping("category-delete-{id}")
+	public String deleteCategory(@PathVariable("id") String id, Model model) throws Exception {
+		categoryDAO.deleteCategory(id);
+
+		model.addAttribute("successMsg", "Deleted Successfully");
+		return "redirect:/category";
+	}
+
+	@RequestMapping(value = "category-edit-{id}", method = RequestMethod.GET)
+	public String editCategory(@PathVariable("id") String id, Model model) throws Exception {
+
+		model.addAttribute("category", this.categoryDAO.get(id));
+
+		model.addAttribute("categoryList", this.categoryDAO.list());
+		return "category";
 	}
 }
