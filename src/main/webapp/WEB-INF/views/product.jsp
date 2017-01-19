@@ -40,18 +40,18 @@ input[type=text] {
 	box-sizing: border-box;
 }
 
-table {
+.tble {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
 }
 
-td, th {
+.tble td, th {
 	border: 1px solid #dddddd;
 	padding: 15px;
 }
 
-tr:nth-child(even) {
+.tble tr:nth-child(even) {
 	background-color: #dddddd;
 }
 </style>
@@ -59,74 +59,59 @@ tr:nth-child(even) {
 <body>
 	<form:form action="product/add" commandName="product" method="post">
 		<table class="table table-condensed">
-			<tr bgcolor=#F0F8FF>
-				<td><form:label style="color:#000000" path="id">
-						<spring:message text="id" />
+			<tr>
+				<td><form:label path="id">
+						<spring:message text="ID" />
 					</form:label></td>
 				<c:choose>
 					<c:when test="${!empty product.id}">
-						<td><form:input
-								style="background-color:#F5F5DC;border:0.25px solid black"
-								path="id" disabled="true" readonly="true" /></td>
+						<td><form:input placeholder="Enter ID" path="id"
+								disabled="true" readonly="true" /></td>
 					</c:when>
 					<c:otherwise>
-						<td><form:input
-								style="background-color:#F5F5DC;border:0.25px solid black"
-								path="id" pattern=".{4,7}" required="true"
-								title="id should be between 4 to 7 characters" /></td>
+						<td><form:input placeholder="Enter ID" path="id"
+								required="true" /></td>
 					</c:otherwise>
 				</c:choose>
 			</tr>
-			<tr bgcolor="#F0F8FF">
+			<tr>
 				<form:input path="id" hidden="true" />
-				<td><form:label style="color:#000000" path="name">
-						<spring:message text="name" />
+				<td><form:label path="name">
+						<spring:message text="NAME" />
 					</form:label></td>
-				<td><form:input
-						style="background-color:#F5F5DC;border:0.25px solid black"
-						path="name" required="true" /></td>
+				<td><form:input path="name" placeholder="Enter Name"
+						required="true" /></td>
 			</tr>
-			<tr bgcolor="#F0F8FF">
-				<td><form:label style="color:#000000" path="description">
-						<spring:message text="description" />
+			<tr>
+				<td><form:label path="description">
+						<spring:message text="DESCRIPTION" />
 					</form:label></td>
-				<td><form:input
-						style="background-color:#F5F5DC;border:0.25px solid black"
-						path="description" required="true" /></td>
+				<td><form:input path="description"
+						placeholder="Enter Description" required="true" /></td>
 			</tr>
-			<tr bgcolor="#F0F8FF">
-				<td><form:label style="color:#000000" path="category_id">
-						<spring:message text="category_id" />
+			<tr>
+				<td>Category List</td>
+				<td><form:select path="category.name" items="${categoryList}" itemValue="name" itemLabel="name"></form:select></td>
+			</tr>
+			<tr>
+			    <td>Supplier List</td>
+				<td><form:select path="supplier.name" items="${supplierList}" itemValue="name" itemLabel="name"></form:select></td>
+			</tr>
+			<tr>
+				<td><form:label path="price">
+						<spring:message text="PRICE" />
 					</form:label></td>
-				<td><form:input
-						style="background-color:#F5F5DC;border:0.25px solid black"
-						path="category_id" required="true" /></td>
+				<td><form:input path="price" placeholder="Enter Price"
+						required="true" /></td>
 			</tr>
-			<tr bgcolor="#F0F8FF">
-				<td><form:label style="color:#000000" path="supplier_id">
-						<spring:message text="supplier_id" />
+			<tr>
+				<td><form:label path="stock">
+						<spring:message text="STOCK" />
 					</form:label></td>
-				<td><form:input
-						style="background-color:#F5F5DC;border:0.25px solid black"
-						path="supplier_id" required="true" /></td>
+				<td><form:input path="stock" placeholder="Enter Stock"
+						required="true" /></td>
 			</tr>
-			<tr bgcolor="#F0F8FF">
-				<td><form:label style="color:#000000" path="price">
-						<spring:message text="price" />
-					</form:label></td>
-				<td><form:input
-						style="background-color:#F5F5DC;border:0.25px solid black"
-						path="price" required="true" /></td>
-			</tr>
-			<tr bgcolor="#F0F8FF">
-				<td><form:label style="color:#000000" path="stock">
-						<spring:message text="stock" />
-					</form:label></td>
-				<td><form:input
-						style="background-color:#F5F5DC;border:0.25px solid black"
-						path="stock" required="true" /></td>
-			</tr>
-			<tr bgcolor="#F0F8FF">
+			<tr>
 				<td align="right" colspan="2"><c:if
 						test="${!empty product.name}">
 						<input style="align: middle" class="btn btn-primary btn-md"
@@ -138,7 +123,7 @@ tr:nth-child(even) {
 			</tr>
 		</table>
 	</form:form>
-	<table>
+	<table class="tble">
 		<tr>
 			<th>ID</th>
 			<th>Name</th>

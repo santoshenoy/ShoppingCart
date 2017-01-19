@@ -1,5 +1,7 @@
 package com.niit.shoppingCart.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.model.Category;
+import com.niit.shoppingcart.util.Util;
 
 @Controller
 public class CategoryController {
@@ -29,7 +32,10 @@ public class CategoryController {
 	}
 
 	@RequestMapping(value = "/category/add", method = RequestMethod.POST)
-	public String addCategory(@ModelAttribute("category") Category category) {
+	public String addCategory(@Valid @ModelAttribute("category") Category category) {
+		Util util = new Util();
+		String id = util.removeComma(category.getId());
+		category.setId(id);
 		categoryDAO.addCategory(category);
 		ModelAndView mv = new ModelAndView("category");
 		mv.addObject("successMsg", "true");
@@ -52,4 +58,5 @@ public class CategoryController {
 		model.addAttribute("categoryList", this.categoryDAO.list());
 		return "category";
 	}
+
 }

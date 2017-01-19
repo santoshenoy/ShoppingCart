@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.model.Supplier;
+import com.niit.shoppingcart.util.Util;
 
 @Controller
 public class SupplierController {
@@ -32,7 +33,9 @@ public class SupplierController {
 
 	@RequestMapping(value = "supplier-add", method = RequestMethod.POST)
 	public String addSupplier(Model model, @Valid @ModelAttribute("supplier") Supplier supplier) {
-		System.out.println("'Hi,");
+		Util util = new Util();
+		String id = util.removeComma(supplier.getId());
+		supplier.setId(id);
 		supplierDAO.addSupplier(supplier);
 		return "redirect:/supplier";
 	}
