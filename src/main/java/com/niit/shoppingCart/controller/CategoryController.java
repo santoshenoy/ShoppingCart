@@ -37,8 +37,6 @@ public class CategoryController {
 		String id = util.removeComma(category.getId());
 		category.setId(id);
 		categoryDAO.addCategory(category);
-		ModelAndView mv = new ModelAndView("category");
-		mv.addObject("successMsg", "true");
 		return "redirect:/category";
 	}
 

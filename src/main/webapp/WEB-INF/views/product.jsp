@@ -7,6 +7,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Product Page</title>
 <style>
 body {
@@ -18,17 +24,16 @@ form {
 	border: 3px solid #f1f1f1;
 }
 
-.container {
-	padding: 16px;
-}
-
-button {
+.button {
 	background-color: green;
 	color: white;
-	padding: 14px 20px; margin 8px 0;
+	padding: 14px 70px;
+	display: block;
+	margin: auto;
+	text-align: center;
 	border: none;
 	cursor: pointer;
-	width: 10%;
+	width: 30%;
 }
 
 input[type=text] {
@@ -40,29 +45,32 @@ input[type=text] {
 	box-sizing: border-box;
 }
 
-.tble {
+table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
 }
 
-.tble td, th {
+td, th {
+	text-align: center;
 	border: 1px solid #dddddd;
-	padding: 15px;
+	padding: 10px;
+	border: 1px solid #dddddd;
 }
 
-.tble tr:nth-child(even) {
+tr:nth-child(even) {
 	background-color: #dddddd;
 }
 </style>
 </head>
 <body>
-	<form:form action="product/add" commandName="product" method="post">
-		<table class="table table-condensed">
+	<jsp:include page="header.jsp"></jsp:include>
+
+	<form:form action="product/add" commandName="product" method="post"
+		enctype="multipart/form-data">
+		<table>
 			<tr>
-				<td><form:label path="id">
-						<spring:message text="ID" />
-					</form:label></td>
+				<td><label> ID </label></td>
 				<c:choose>
 					<c:when test="${!empty product.id}">
 						<td><form:input placeholder="Enter ID" path="id"
@@ -76,49 +84,48 @@ input[type=text] {
 			</tr>
 			<tr>
 				<form:input path="id" hidden="true" />
-				<td><form:label path="name">
-						<spring:message text="NAME" />
-					</form:label></td>
-				<td><form:input path="name" placeholder="Enter Name"
-						required="true" /></td>
+				<td><label> NAME </label></td>
+				<td><form:input path="name" type="text"
+						placeholder="Enter Name" required="true" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="description">
-						<spring:message text="DESCRIPTION" />
-					</form:label></td>
+				<td><label> DESCRIPTION </label></td>
 				<td><form:input path="description"
 						placeholder="Enter Description" required="true" /></td>
 			</tr>
 			<tr>
-				<td>Category List</td>
-				<td><form:select path="category.name" items="${categoryList}" itemValue="name" itemLabel="name"></form:select></td>
+				<td><label> CATEGORY LIST </label></td>
+				<td><form:select path="category.name" items="${categoryList}"
+						itemValue="name" itemLabel="name"></form:select></td>
 			</tr>
 			<tr>
-			    <td>Supplier List</td>
-				<td><form:select path="supplier.name" items="${supplierList}" itemValue="name" itemLabel="name"></form:select></td>
+				<td><label> SUPPLIER LIST </label></td>
+				<td><form:select path="supplier.name" items="${supplierList}"
+						itemValue="name" itemLabel="name"></form:select></td>
 			</tr>
 			<tr>
-				<td><form:label path="price">
-						<spring:message text="PRICE" />
-					</form:label></td>
+				<td><label> PRICE </label></td>
 				<td><form:input path="price" placeholder="Enter Price"
 						required="true" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="stock">
-						<spring:message text="STOCK" />
-					</form:label></td>
+				<td><label> STOCK </label></td>
 				<td><form:input path="stock" placeholder="Enter Stock"
+						required="true" /></td>
+			</tr>
+			<tr>
+				<td><label> IMAGE </label></td>
+				<td><form:input path="image" placeholder="Enter Image"
 						required="true" /></td>
 			</tr>
 			<tr>
 				<td align="right" colspan="2"><c:if
 						test="${!empty product.name}">
-						<input style="align: middle" class="btn btn-primary btn-md"
-							type="submit" value="<spring:message text="Edit Product"/>" />
+						<input type="submit" style="background-color: green"
+							class="btn btn-primary btn-md" value="EDIT PRODUCT" />
 					</c:if> <c:if test="${empty product.name}">
-						<input style="align: middle" class="btn btn-primary btn-md"
-							type="submit" value="<spring:message text="Add Product"/>" />
+						<input type="submit" style="background-color: green"
+							class="btn btn-primary btn-md" value="ADD PRODUCT" />
 					</c:if></td>
 			</tr>
 		</table>
@@ -132,6 +139,7 @@ input[type=text] {
 			<th>Supplier_ID</th>
 			<th>Price</th>
 			<th>Stock</th>
+			<th>Image</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
@@ -144,10 +152,14 @@ input[type=text] {
 				<td>${product.supplier_id}</td>
 				<td>${product.price}</td>
 				<td>${product.stock}</td>
+				<td><img
+					src="<c:url value="/resources/images/${product.id}.jpg"/>"></img></td>
 				<td><a href="<c:url value='product-edit-${product.id}'/>"><input
-						type="button" value="EDIT" /></a></td>
+						type="submit" style="background-color: green"
+						class="btn btn-primary btn-md" value="EDIT" /></a></td>
 				<td><a href="<c:url value='product-delete-${product.id}'/>"><input
-						type="button" value="DELETE" /></a></td>
+						type="submit" style="background-color: green"
+						class="btn btn-primary btn-md" value="DELETE" /></a></td>
 			</tr>
 		</c:forEach>
 	</table>

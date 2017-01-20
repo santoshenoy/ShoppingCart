@@ -2,6 +2,8 @@ package com.niit.shoppingCart.controller;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,9 @@ import com.niit.shoppingcart.util.Util;
 
 @Controller
 public class SupplierController {
+
+	public static Logger log = LoggerFactory.getLogger(UserController.class);
+
 	@Autowired
 	Supplier supplier;
 
@@ -42,16 +47,15 @@ public class SupplierController {
 
 	@RequestMapping("supplier-delete-{id}")
 	public String deleteSupplier(@PathVariable("id") String id, Model model) throws Exception {
+		log.debug("Start of the deleteSupplier method");
 		supplierDAO.deleteSupplier(id);
-		System.out.println("'Hi,");
 		model.addAttribute("successMsg", "Deleted Successfully");
+		log.debug("End of the deleteSupplier method");
 		return "redirect:/supplier";
 	}
 
 	@RequestMapping(value = "supplier-edit-{id}")
 	public String editSupplier(@PathVariable("id") String id, Model model) throws Exception {
-		System.out.println("'Hi,");
-
 		model.addAttribute("supplier", this.supplierDAO.get(id));
 		model.addAttribute("supplierList", this.supplierDAO.list());
 		System.out.println("Hi2");

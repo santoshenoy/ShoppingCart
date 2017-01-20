@@ -1,7 +1,14 @@
 package com.niit.shoppingCart.controller;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.dao.ProductDAO;
@@ -21,6 +28,9 @@ import com.niit.shoppingcart.util.Util;
 
 @Controller
 public class ProductController {
+
+	public static Logger log = LoggerFactory.getLogger(ProductController.class);
+
 	@Autowired
 	Product product;
 
@@ -39,6 +49,8 @@ public class ProductController {
 	@Autowired
 	CategoryDAO categoryDAO;
 
+	private Path path;
+
 	@RequestMapping("/product")
 	public String showRegistrationPage(Model m) {
 		m.addAttribute("product", new Product());
@@ -51,7 +63,8 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/product/add", method = RequestMethod.POST)
-	public String addProduct(@Valid @ModelAttribute("product") Product product) {
+	public String addProduct(@Valid @ModelAttribute("product") Product product, HttpServletRequest request) {
+		log.debug("Starting of the addProduct Method");
 		Util util = new Util();
 		String id = util.removeComma(product.getId());
 		product.setId(id);
@@ -62,22 +75,32 @@ public class ProductController {
 		product.setSupplier(supplier);
 		product.setSupplier_id(supplier.getId());
 		productDAO.addProduct(product);
-		ModelAndView mv = new ModelAndView("product");
-		mv.addObject("successMsg", "true");
+		MultipartFile file = product.getImage();
+		System.out.println(product.getImage());
+		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+		path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + product.getId() + ".jpg");
+		if (file != null && !file.isEmpty()) {
+			try {
+				file.transferTo(new File(path.toString()));
+				log.debug("image uploaded....");
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new RuntimeException("image saving failed", e);
+			}
+		}
+		log.debug("Ending of the addProduct Method");
 		return "redirect:/product";
 	}
 
 	@RequestMapping("product-delete-{id}")
 	public String deleteProduct(@PathVariable("id") String id, Model model) throws Exception {
 		productDAO.deleteProduct(id);
-
 		model.addAttribute("successMsg", "Deleted Successfully");
 		return "redirect:/product";
 	}
 
 	@RequestMapping(value = "product-edit-{id}", method = RequestMethod.GET)
 	public String editProduct(@PathVariable("id") String id, Model model) throws Exception {
-
 		model.addAttribute("product", this.productDAO.get(id));
 		model.addAttribute("productList", this.productDAO.list());
 		model.addAttribute("supplierList", this.supplierDAO.list());

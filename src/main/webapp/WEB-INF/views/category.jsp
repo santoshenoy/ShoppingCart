@@ -7,7 +7,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -23,10 +22,6 @@ body {
 form {
 	background-color: lightsteelblue;
 	border: 3px solid #f1f1f1;
-}
-
-.container {
-	padding: 16px;
 }
 
 button {
@@ -54,6 +49,7 @@ table {
 }
 
 td, th {
+	text-align: center;
 	border: 1px solid #dddddd;
 	padding: 15px;
 }
@@ -64,51 +60,41 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<form:form action="category/add" commandName="category" method="post">
 		<table class="table table-condensed">
-			<tr bgcolor=#F0F8FF>
-				<td><form:label style="color:#000000" path="id">
-						<spring:message text="id" />
-					</form:label></td>
+			<tr>
+				<td><label> ID </label></td>
 				<c:choose>
 					<c:when test="${!empty category.id}">
-						<td><form:input
-								style="background-color:#F5F5DC;border:0.25px solid black"
-								path="id" disabled="true" readonly="true" /></td>
+						<td><form:input placeholder="Enter ID" path="id"
+								disabled="true" readonly="true" /></td>
 					</c:when>
 					<c:otherwise>
-						<td><form:input
-								style="background-color:#F5F5DC;border:0.25px solid black"
-								path="id" pattern=".{4,7}" required="true"
-								title="id should be between 4 to 7 characters" /></td>
+						<td><form:input placeholder="Enter ID" path="id"
+								required="true" /></td>
 					</c:otherwise>
 				</c:choose>
 			</tr>
-			<tr bgcolor="#F0F8FF">
+			<tr>
 				<form:input path="id" hidden="true" />
-				<td><form:label style="color:#000000" path="name">
-						<spring:message text="name" />
-					</form:label></td>
-				<td><form:input
-						style="background-color:#F5F5DC;border:0.25px solid black"
-						path="name" required="true" /></td>
+				<td><label> NAME </label></td>
+				<td><form:input path="name" type="text"
+						placeholder="Enter Name" required="true" /></td>
 			</tr>
-			<tr bgcolor="#F0F8FF">
-				<td><form:label style="color:#000000" path="description">
-						<spring:message text="description" />
-					</form:label></td>
-				<td><form:input
-						style="background-color:#F5F5DC;border:0.25px solid black"
-						path="description" required="true" /></td>
+			<tr>
+				<td><label> DESCRIPTION </label></td>
+				<td><form:input path="description" type="text"
+						placeholder="Enter Description" required="true" /></td>
 			</tr>
 			<tr bgcolor="#F0F8FF">
 				<td align="right" colspan="2"><c:if
 						test="${!empty category.name}">
-						<input style="align: middle" class="btn btn-primary btn-md"
-							type="submit" value="<spring:message text="Edit Category"/>" />
+						<input type="submit" style="background-color: green"
+							class="btn btn-primary btn-md" value="EDIT CATEGORY" />
 					</c:if> <c:if test="${empty category.name}">
-						<input style="align: middle" class="btn btn-primary btn-md"
-							type="submit" value="<spring:message text="Add Category"/>" />
+						<input type="submit" style="background-color: green"
+							class="btn btn-primary btn-md" value="ADD CATEGORY" />
 					</c:if></td>
 			</tr>
 		</table>
@@ -117,10 +103,10 @@ tr:nth-child(even) {
 	<table>
 		<tr>
 			<th>ID</th>
-			<th>Name</th>
-			<th>Description</th>
-			<th>Edit</th>
-			<th>Delete</th>
+			<th>NAME</th>
+			<th>DESCRIPTION</th>
+			<th>EDIT</th>
+			<th>DELETE</th>
 		</tr>
 		<c:forEach items="${categoryList}" var="category">
 			<tr>
@@ -128,9 +114,11 @@ tr:nth-child(even) {
 				<td>${category.name}</td>
 				<td>${category.description}</td>
 				<td><a href="<c:url value='category-edit-${category.id}'/>"><input
-						type="button" value="EDIT" /></a></td>
+						type="submit" style="background-color: green"
+						class="btn btn-primary btn-md" value="EDIT" /></a></td>
 				<td><a href="<c:url value='category-delete-${category.id}'/>"><input
-						type="button" value="DELETE" /></a></td>
+						type="submit" style="background-color: green"
+						class="btn btn-primary btn-md" value="DELETE" /></a></td>
 			</tr>
 		</c:forEach>
 	</table>

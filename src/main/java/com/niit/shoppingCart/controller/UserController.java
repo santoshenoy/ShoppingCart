@@ -41,31 +41,28 @@ public class UserController {
 	@Autowired
 	private Supplier supplier;
 
-	@RequestMapping("/validate")
-	public ModelAndView validate(@RequestParam("id") String name, @RequestParam("password") String pwd) {
-		log.debug("Starting of the Validate method");
-		ModelAndView mv = new ModelAndView("home");
-		user = userDAO.isValidUser(name, pwd);
-		if (user != null) {
-			if (user.getRole().equals("ROLE_ADMIN")) {
-				mv.addObject("isAdmin", "true");
-				mv.addObject("successMsg", "Hi Admin!");
-			} else {
-				mv.addObject("isAdmin", "false");
-				mv.addObject("successMsg", "Hi User");
-			}
-		} else {
-			mv.addObject("successMsg", "Entered username and/or password not in our records");
-		}
-		return mv;
-
+	@RequestMapping(value = "/user")
+	public String getUser() {
+		return "login";
 	}
 
-	@RequestMapping("/login")
-	public ModelAndView showLoginPage() {
-		ModelAndView mv = new ModelAndView("login");
-		mv.addObject("showLoginPage", "true");
-		return mv;
+	@RequestMapping(value = "/admin")
+	public String getAdmin() {
+		return "adminhome";
+	}
+
+	@RequestMapping(value = "/login")
+	public String login(@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout, Model model) {
+		if (error != null) {
+			log.debug("Error..");
+			model.addAttribute("loginerror", "...Invalid username and password");
+		}
+		if (logout != null) {
+			log.debug("logout called..");
+			model.addAttribute("loginmsg", "...you have been logged out");
+		}
+		return "login";
 	}
 
 	@RequestMapping("/register")

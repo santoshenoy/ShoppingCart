@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -52,13 +53,12 @@ span.psw {
 </style>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	Please enter your Username and Password below
-
-	<form action="validate" method="post">
+	<form action="<c:url value='j_spring_security_check'/>" method="post">
 		<div class="container">
-
-			<label><b>Username</b></label> <input type="text"
-				placeholder="Enter Username" name="id" required> <label><b>Password</b></label>
+			<label><b>USERNAME</b></label> <input type="text"
+				placeholder="Enter Username" name="username" required> <label><b>PASSWORD</b></label>
 			<input type="password" placeholder="Enter Password" name="password"
 				required>
 			<button type="submit">Login</button>
@@ -68,6 +68,8 @@ span.psw {
 			<input type="checkbox" checked="checked"> Remember me <span
 				class="psw"><a href="#">Forgot password?</a></span>
 		</div>
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
 	</form>
 </body>
 </html>

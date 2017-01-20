@@ -7,6 +7,7 @@
 <title>Admin Home</title>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<div id="adminHome">
 		<a href="category">Manage Categories</a> &nbsp; &nbsp; <a
 			href="supplier">Manage Suppliers</a> &nbsp; &nbsp; <a href="product">Manage

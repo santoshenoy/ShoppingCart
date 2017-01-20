@@ -7,7 +7,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>GuitarMania</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Welcome to GuitarMania!</title>
 <style>
 body {
 	background-color: #ff9933;
@@ -15,25 +22,29 @@ body {
 </style>
 </head>
 <body>
-	<c:if test="${empty successMsg}">
-		<h2>Please Login or Register</h2>
-		<a href="login">Login</a>
-		<br>
-		<a href="register">Register</a>
-	</c:if>
-	<hr>
-	${successMsg}
-	<c:if test="${showLoginPage}">
-		<jsp:include page="login.jsp"></jsp:include>
-	</c:if>
-	<c:if test="${showRegistrationPage}">
-		<jsp:include page="registration.jsp"></jsp:include>
-	</c:if>
-	<c:if test="${isAdmin}">
-		<jsp:include page="adminhome.jsp"></jsp:include>
-	</c:if>
-	<c:if test="${isAdminClickedCategories}">
-		<jsp:include page="category.jsp"></jsp:include>
-	</c:if>
+<%-- 	<c:if test="${empty successMsg}"> --%>
+<!-- 		<h2>Please Login or Register</h2> -->
+<!-- 		<a href="login">Login</a> -->
+<!-- 		<br> -->
+<!-- 		<a href="register">Register</a> -->
+<%-- 	</c:if> --%>
+<!-- 	<hr> -->
+<%-- 	${successMsg} --%>
+<%-- 	<c:if test="${showLoginPage}"> --%>
+<%-- 		<jsp:include page="login.jsp"></jsp:include> --%>
+<%-- 	</c:if> --%>
+<%-- 	<c:if test="${showRegistrationPage}"> --%>
+<%-- 		<jsp:include page="registration.jsp"></jsp:include> --%>
+<%-- 	</c:if> --%>
+<%-- 	<c:if test="${isAdmin}"> --%>
+<%-- 		<jsp:include page="adminhome.jsp"></jsp:include> --%>
+<%-- 	</c:if> --%>
+<%-- 	<c:if test="${isAdminClickedCategories}"> --%>
+<%-- 		<jsp:include page="category.jsp"></jsp:include> --%>
+<%-- 	</c:if> --%>
+
+<jsp:include page="header.jsp"></jsp:include>
+
+
 </body>
 </html>

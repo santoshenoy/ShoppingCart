@@ -7,6 +7,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Supplier Page</title>
 <style>
 body {
@@ -16,10 +22,6 @@ body {
 form {
 	background-color: lightsteelblue;
 	border: 3px solid #f1f1f1;
-}
-
-.container {
-	padding: 16px;
 }
 
 button {
@@ -44,11 +46,14 @@ table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
+	font-family: arial, sans-serif;
 }
 
 td, th {
+	text-align: center;
 	border: 1px solid #dddddd;
 	padding: 15px;
+	border: 1px solid #dddddd;
 }
 
 tr:nth-child(even) {
@@ -57,51 +62,41 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<form:form action="supplier-add" commandName="supplier" method="post">
 		<table class="table table-condensed">
-			<tr bgcolor=#F0F8FF>
-				<td><form:label style="color:#000000" path="id">
-						<spring:message text="id" />
-					</form:label></td>
+			<tr>
+				<td><label> ID </label></td>
 				<c:choose>
 					<c:when test="${!empty supplier.id}">
-						<td><form:input
-								style="background-color:#F5F5DC;border:0.25px solid black"
-								path="id" disabled="true" readonly="true" /></td>
+						<td><form:input placeholder="Enter ID" path="id"
+								disabled="true" readonly="true" /></td>
 					</c:when>
 					<c:otherwise>
-						<td><form:input
-								style="background-color:#F5F5DC;border:0.25px solid black"
-								path="id" pattern=".{4,7}" required="true"
-								title="id should be between 4 to 7 characters" /></td>
+						<td><form:input placeholder="Enter ID" path="id"
+								required="true" /></td>
 					</c:otherwise>
 				</c:choose>
 			</tr>
-			<tr bgcolor="#F0F8FF">
+			<tr>
 				<form:input path="id" hidden="true" />
-				<td><form:label style="color:#000000" path="name">
-						<spring:message text="name" />
-					</form:label></td>
-				<td><form:input
-						style="background-color:#F5F5DC;border:0.25px solid black"
-						path="name" required="true" /></td>
+				<td><label> NAME </label></td>
+				<td><form:input path="name" type="text"
+						placeholder="Enter Name" required="true" /></td>
 			</tr>
-			<tr bgcolor="#F0F8FF">
-				<td><form:label style="color:#000000" path="address">
-						<spring:message text="address" />
-					</form:label></td>
-				<td><form:input
-						style="background-color:#F5F5DC;border:0.25px solid black"
-						path="address" required="true" /></td>
+			<tr>
+				<td><label> ADDRESS </label></td>
+				<td><form:input path="address" type="text"
+						placeholder="Enter Address" required="true" /></td>
 			</tr>
-			<tr bgcolor="#F0F8FF">
-				<td align="right" colspan="2"><c:if
+			<tr>
+				<td align="center" colspan="2"><c:if
 						test="${!empty supplier.name}">
-						<input style="align: middle" class="btn btn-primary btn-md"
-							type="submit" value="<spring:message text="Edit Supplier"/>" />
+						<input type="submit" style="background-color: green"
+							class="btn btn-primary btn-md" value="EDIT CATEGORY" />
 					</c:if> <c:if test="${empty supplier.name}">
-						<input style="align: middle" class="btn btn-primary btn-md"
-							type="submit" value="<spring:message text="Add Supplier"/>" />
+						<input type="submit" style="background-color: green"
+							class="btn btn-primary btn-md" value="ADD CATEGORY" />
 					</c:if></td>
 			</tr>
 		</table>
@@ -110,10 +105,10 @@ tr:nth-child(even) {
 	<table>
 		<tr>
 			<th>ID</th>
-			<th>Name</th>
-			<th>Address</th>
-			<th>Edit</th>
-			<th>Delete</th>
+			<th>NAME</th>
+			<th>ADDRESS</th>
+			<th>EDIT</th>
+			<th>DELETE</th>
 		</tr>
 		<c:forEach items="${supplierList}" var="supplier">
 			<tr>
@@ -121,9 +116,11 @@ tr:nth-child(even) {
 				<td>${supplier.name}</td>
 				<td>${supplier.address}</td>
 				<td><a href="<c:url value='supplier-edit-${supplier.id}'/>"><input
-						type="button" value="EDIT" /></a></td>
+						type="submit" style="background-color: green"
+						class="btn btn-primary btn-md" value="EDIT" /></a></td>
 				<td><a href="<c:url value='supplier-delete-${supplier.id}'/>"><input
-						type="button" value="DELETE" /></a></td>
+						type="submit" style="background-color: green"
+						class="btn btn-primary btn-md" value="DELETE" /></a></td>
 			</tr>
 		</c:forEach>
 	</table>
