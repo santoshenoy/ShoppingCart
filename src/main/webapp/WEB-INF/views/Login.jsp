@@ -12,7 +12,7 @@ body {
 }
 
 input[type=text], input[type=password] {
-	width: 100%;
+	width: 30%;
 	padding: 12px 20px;
 	margin: 8px 0;
 	display: inline-block;
@@ -21,52 +21,34 @@ input[type=text], input[type=password] {
 }
 
 form {
-	background-color: skyblue;
+	background-color: cornsilk;
 	border: 3px solid #f1f1f1;
+	width: 30%;
+	margin: 0 auto;
 }
 
-button {
-	background-color: green;
+.sbmtbtn {
 	color: white;
-	padding: 14px 20px; margin 8px 0;
+	padding: 7px 15px; margin 8px 0;
 	border: none;
 	cursor: pointer;
-	width: 10%;
+	width: 30%;
 }
 
 .container {
 	padding: 16px;
 }
-
-span.psw {
-	float: right;
-}
-
-.cancelbtn {
-	background-color: red;
-	color: white;
-	padding: 14px 20px; margin 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 10%;
-}
 </style>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	Please enter your Username and Password below
 	<form action="<c:url value='j_spring_security_check'/>" method="post">
 		<div class="container">
-			<label><b>USERNAME</b></label> <input type="text"
-				placeholder="Enter Username" name="username" required> <label><b>PASSWORD</b></label>
-			<input type="password" placeholder="Enter Password" name="password"
-				required>
-			<button type="submit">Login</button>
-			<button type="button" class="cancelbtn">Cancel</button>
-		</div>
-		<div class="container" style="background-color: #f1f1f1">
-			<input type="checkbox" checked="checked"> Remember me <span
-				class="psw"><a href="#">Forgot password?</a></span>
+			<label><b>USERNAME:</b></label> <br> <input type="text"
+				placeholder="Enter Username" name="username" required> <br>
+			<label><b>PASSWORD:</b></label> <br> <input type="password"
+				placeholder="Enter Password" name="password" required> <br>
+			<button type="submit" style="background-color: green" class="sbmtbtn">Log In</button>
 		</div>
 		<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />

@@ -12,8 +12,8 @@ body {
 	background-color: #ff9933;
 }
 
-input[type=text] {
-	width: 100%;
+input[type=text], [type=password] {
+	width: 40%;
 	padding: 12px 20px;
 	margin: 8px 0;
 	display: inline-block;
@@ -22,61 +22,66 @@ input[type=text] {
 }
 
 form {
-	background-color: skyblue;
+	background-color: cornsilk;
 	border: 3px solid #f1f1f1;
+	width: 40%;
+	margin: 0 auto;
 }
 
-button {
+.sbmtbtn {
 	background-color: green;
 	color: white;
 	padding: 14px 20px; margin 8px 0;
 	border: none;
 	cursor: pointer;
-	width: 30%;
+	width: 40%;
 }
 
-.cancelbtn {
-	background-color: red;
-	color: white;
-	padding: 14px 20px; margin 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 30%;
+.container {
+	padding: 16px;
 }
 </style>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	Please fill in the required details below
 	<form:form action="registered" commandName="user" method="post">
 		<div class="container">
 			<form:label path="name">
-				<b>Name</b>
+				<b>NAME:</b>
 			</form:label>
+			<br>
 			<form:input type="text" placeholder="Enter Name" path="name"
 				name="name" required="true" />
+			<br>
 			<form:label path="mail">
-				<b>E-Mail Address</b>
+				<b>E-MAIL ADDRESS:</b>
 			</form:label>
+			<br>
 			<form:input type="text" placeholder="Enter Email Address" path="mail"
 				name="mail" required="true" />
+			<br>
 			<form:label path="mobile">
-				<b>Mobile Number</b>
+				<b>MOBILE NUMBER:</b>
 			</form:label>
+			<br>
 			<form:input type="text" placeholder="Enter Mobile Number"
 				path="mobile" name="mobile" required="true" />
+			<br>
 			<form:label path="password">
-				<b>PASSWORD</b>
+				<b>PASSWORD:</b>
 			</form:label>
-			<form:input type="text" placeholder="Enter Password" path="password"
+			<br>
+			<form:input type="password" placeholder="Enter Password" path="password"
 				name="password" required="true" />
+			<br>
 			<form:label path="id">
-				<b>Enter Username</b>
+				<b>USERNAME:</b>
 			</form:label>
+			<br>
 			<form:input type="text" placeholder="Enter Username" path="id"
 				name="id" required="true" />
-			<button type="submit">Register</button>
-			<button type="button" class="cancelbtn">Cancel</button>
+			<br>
+			<button type="submit" style="background-color: green" class="sbmtbtn">Register</button>
 		</div>
 	</form:form>
 </body>

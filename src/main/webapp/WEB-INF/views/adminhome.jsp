@@ -9,9 +9,9 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div id="adminHome">
-		<a href="category">Manage Categories</a> &nbsp; &nbsp; <a
-			href="supplier">Manage Suppliers</a> &nbsp; &nbsp; <a href="product">Manage
-			Products</a> &nbsp; &nbsp;
+		<a href="category" style="color: navy">MANAGE CATEGORIES</a> &nbsp;
+		&nbsp; <a href="supplier" style="color: navy">MANAGE SUPPLIERS</a> &nbsp; &nbsp; <a
+			href="product" style="color: navy">MANAGE PRODUCTS</a> &nbsp; &nbsp;
 	</div>
 </body>
 </html>

@@ -24,9 +24,6 @@ body {
 		<div class="navbar-header" style="color: white">
 			<a style="color: #F5F5DC" class="navbar-brand" href="#">GUITARMANIA</a>
 		</div>
-		<ul class="nav navbar-nav">
-			<li><a style="color: #F5F5DC" href="aboutUs">CONTACT US</a></li>
-		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li class="divider-vertical"></li>
 			<c:if test="${pageContext.request.userPrincipal.name != null}">
@@ -50,7 +47,7 @@ body {
 			<c:if test="${pageContext.request.userPrincipal.name  == null}">
 				<li><a style="color: #F5F5DC; margin: 0px 0px 0px 0px"
 					href="<c:url value="login" />"><span
-						class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						class="glyphicon glyphicon-log-in"></span> Log In</a></li>
 				<li><a style="color: #F5F5DC; margin: 0px 0px 0px 0px"
 					href="<c:url value="register" />"><span
 						class="glyphicon glyphicon-user"></span> Sign Up</a></li>

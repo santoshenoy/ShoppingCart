@@ -22,29 +22,7 @@ body {
 </style>
 </head>
 <body>
-<%-- 	<c:if test="${empty successMsg}"> --%>
-<!-- 		<h2>Please Login or Register</h2> -->
-<!-- 		<a href="login">Login</a> -->
-<!-- 		<br> -->
-<!-- 		<a href="register">Register</a> -->
-<%-- 	</c:if> --%>
-<!-- 	<hr> -->
-<%-- 	${successMsg} --%>
-<%-- 	<c:if test="${showLoginPage}"> --%>
-<%-- 		<jsp:include page="login.jsp"></jsp:include> --%>
-<%-- 	</c:if> --%>
-<%-- 	<c:if test="${showRegistrationPage}"> --%>
-<%-- 		<jsp:include page="registration.jsp"></jsp:include> --%>
-<%-- 	</c:if> --%>
-<%-- 	<c:if test="${isAdmin}"> --%>
-<%-- 		<jsp:include page="adminhome.jsp"></jsp:include> --%>
-<%-- 	</c:if> --%>
-<%-- 	<c:if test="${isAdminClickedCategories}"> --%>
-<%-- 		<jsp:include page="category.jsp"></jsp:include> --%>
-<%-- 	</c:if> --%>
-
-<jsp:include page="header.jsp"></jsp:include>
-
-
+	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

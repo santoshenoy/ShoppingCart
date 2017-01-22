@@ -55,12 +55,12 @@ public class UserController {
 	public String login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout, Model model) {
 		if (error != null) {
-			log.debug("Error..");
-			model.addAttribute("loginerror", "...Invalid username and password");
+			log.debug("Error");
+			model.addAttribute("loginerror", "Invalid username and/or password");
 		}
 		if (logout != null) {
-			log.debug("logout called..");
-			model.addAttribute("loginmsg", "...you have been logged out");
+			log.debug("Logout Called");
+			model.addAttribute("loginmsg", "You have logged out");
 		}
 		return "login";
 	}
