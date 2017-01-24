@@ -64,26 +64,24 @@ tr:nth-child(even) {
 	<form:form action="category/add" commandName="category" method="post">
 		<table class="table table-condensed">
 			<tr>
-				<td><label> ID </label></td>
+				<td><label>ID</label></td>
 				<c:choose>
 					<c:when test="${!empty category.id}">
-						<td><form:input placeholder="Enter ID" path="id"
-								disabled="true" readonly="true" /></td>
+						<td><form:input placeholder="Enter ID" path="id" disabled="true" readonly="true" /></td>
 					</c:when>
 					<c:otherwise>
-						<td><form:input placeholder="Enter ID" path="id"
-								required="true" /></td>
+						<td><form:input placeholder="Enter ID" path="id" required="true" /></td>
 					</c:otherwise>
 				</c:choose>
 			</tr>
 			<tr>
-				<form:input path="id" hidden="true" />
-				<td><label> NAME </label></td>
+				<form:input path="id" hidden="true" /> 
+				<td><label>NAME</label></td>
 				<td><form:input path="name" type="text"
 						placeholder="Enter Name" required="true" /></td>
 			</tr>
 			<tr>
-				<td><label> DESCRIPTION </label></td>
+				<td><label>DESCRIPTION</label></td>
 				<td><form:input path="description" type="text"
 						placeholder="Enter Description" required="true" /></td>
 			</tr>
@@ -99,7 +97,6 @@ tr:nth-child(even) {
 			</tr>
 		</table>
 	</form:form>
-	<hr>
 	<table>
 		<tr>
 			<th>ID</th>

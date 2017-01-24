@@ -16,13 +16,13 @@
 	<div class="navbar-bottom navbar-default" role="navigation"
 		style="background-color: skyblue">
 		<div class="row">
-			<div class="col-xs-6 col-md-3">
+			<div class="col-xs-3 col-md-3">
 				<p>GUITARMANIA</p>
 				<li><a href="aboutus.jsp" style="color: white">About Us</a></li>
 				<li><a href="contactus.jsp" style="color: white">Contact Us</a></li>
 				<li><a href="careers.jsp" style="color: white">Careers</a></li>
 			</div>
-			<div class="col-xs-6 col-md-3">
+			<div class="col-xs-3 col-md-3">
 				<p>STAY CONNECTED</p>
 				<li><a href="http://www.facebook.com" style="color: white">Facebook</a></li>
 				<li><a href="https://www.twitter.com" style="color: white">Twitter</a></li>
@@ -30,7 +30,7 @@
 				<li><a href="https://youtube.com/" style="color: white">Youtube</a></li>
 				<li><a href="https://www.instagram.com" style="color: white">Instagram</a></li>
 			</div>
-			<div class="col-xs-6 col-md-3">
+			<div class="col-xs-3 col-md-3">
 				<p>HELP</p>
 				<li><a href="faq.jsp" style="color: white">FAQ</a></li>
 				<li><a href="cancret.jsp" style="color: white">Cancellation
@@ -38,7 +38,7 @@
 				<li><a href="shipping.jsp" style="color: white">Shipping</a></li>
 				<li><a href="payment.jsp" style="color: white">Payment</a></li>
 			</div>
-			<div class="col-xs-6 col-md-3">
+			<div class="col-xs-3 col-md-3">
 				<p>POLICY</p>
 				<li><a href="terms.jsp" style="color: white">Terms and
 						Conditions</a></li>

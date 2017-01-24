@@ -4,14 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Admin Home</title>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div id="adminHome">
-		<a href="category" style="color: navy">MANAGE CATEGORIES</a> &nbsp;
-		&nbsp; <a href="supplier" style="color: navy">MANAGE SUPPLIERS</a> &nbsp; &nbsp; <a
-			href="product" style="color: navy">MANAGE PRODUCTS</a> &nbsp; &nbsp;
+		<a href="category"><input type="submit"
+			style="background-color: green" class="btn btn-primary btn-md"
+			value="MANAGE CATEGORIES" /></a> &nbsp; &nbsp; <a href="supplier"><input type="submit"
+			style="background-color: green" class="btn btn-primary btn-md"
+			value="MANAGE SUPPLIERS" /></a> &nbsp; &nbsp; <a href="product"><input type="submit"
+			style="background-color: green" class="btn btn-primary btn-md"
+			value="MANAGE PRODUCTS" /></a> &nbsp; &nbsp;
 	</div>
 </body>
 </html>

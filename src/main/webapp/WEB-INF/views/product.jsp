@@ -115,7 +115,7 @@ tr:nth-child(even) {
 			</tr>
 			<tr>
 				<td><label> IMAGE </label></td>
-				<td><form:input path="image" placeholder="Enter Image"
+				<td><form:input type="file" path="image" placeholder="Enter Image"
 						required="true" /></td>
 			</tr>
 			<tr>
@@ -152,7 +152,7 @@ tr:nth-child(even) {
 				<td>${product.supplier_id}</td>
 				<td>${product.price}</td>
 				<td>${product.stock}</td>
-				<td><img
+				<td><img width="250" height="250"
 					src="<c:url value="/resources/images/${product.id}.jpg"/>"></img></td>
 				<td><a href="<c:url value='product-edit-${product.id}'/>"><input
 						type="submit" style="background-color: green"

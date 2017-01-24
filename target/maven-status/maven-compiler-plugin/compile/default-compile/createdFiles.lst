@@ -1,3 +1,4 @@
+com\niit\shoppingCart\controller\CartController.class
 com\niit\shoppingCart\controller\CategoryController.class
 com\niit\shoppingCart\controller\ProductController.class
 com\niit\shoppingCart\controller\SupplierController.class

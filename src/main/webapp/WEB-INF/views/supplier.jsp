@@ -101,7 +101,6 @@ tr:nth-child(even) {
 			</tr>
 		</table>
 	</form:form>
-	<hr>
 	<table>
 		<tr>
 			<th>ID</th>

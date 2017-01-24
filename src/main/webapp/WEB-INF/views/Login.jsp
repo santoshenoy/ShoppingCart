@@ -44,11 +44,12 @@ form {
 	<jsp:include page="header.jsp"></jsp:include>
 	<form action="<c:url value='j_spring_security_check'/>" method="post">
 		<div class="container">
-			<label><b>USERNAME:</b></label> <br> <input type="text"
-				placeholder="Enter Username" name="username" required> <br>
+			<label><b>EMAIL ADDRESS: </b></label> <br> <input type="text"
+				placeholder="Enter Email" name="username" required> <br>
 			<label><b>PASSWORD:</b></label> <br> <input type="password"
 				placeholder="Enter Password" name="password" required> <br>
-			<button type="submit" style="background-color: green" class="sbmtbtn">Log In</button>
+			<button type="submit" style="background-color: green" class="sbmtbtn">Log
+				In</button>
 		</div>
 		<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />

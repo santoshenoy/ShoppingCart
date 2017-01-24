@@ -74,13 +74,6 @@ form {
 			<form:input type="password" placeholder="Enter Password" path="password"
 				name="password" required="true" />
 			<br>
-			<form:label path="id">
-				<b>USERNAME:</b>
-			</form:label>
-			<br>
-			<form:input type="text" placeholder="Enter Username" path="id"
-				name="id" required="true" />
-			<br>
 			<button type="submit" style="background-color: green" class="sbmtbtn">Register</button>
 		</div>
 	</form:form>

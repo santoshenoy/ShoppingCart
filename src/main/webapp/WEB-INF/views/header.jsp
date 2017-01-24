@@ -24,16 +24,32 @@ body {
 		<div class="navbar-header" style="color: white">
 			<a style="color: #F5F5DC" class="navbar-brand" href="#">GUITARMANIA</a>
 		</div>
+		
+		 <ul class="nav navbar-nav">
+      <c:forEach items="${categoryList}" var="category">
+      <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href=${category.name}>${category.name}<span class="caret"></span> </a>
+      <ul class="dropdown-menu">
+      <c:forEach items="${category.products}" var="product">
+      <li><a style="color:#000000" href="<c:url value='product/get/${product.id}'/>"> ${product.name} </a>
+    
+     </c:forEach>
+       <li><a style="color:#F5F5DC" href="#"></a></li>
+     </ul>
+      </li>       
+      </c:forEach>
+    </ul>
+		
 		<ul class="nav navbar-nav navbar-right">
 			<li class="divider-vertical"></li>
 			<c:if test="${pageContext.request.userPrincipal.name != null}">
 				<c:if
-					test="${pageContext.request.userPrincipal.name != 'santoshenoy'}">
+					test="${pageContext.request.userPrincipal.name != 'santoshenoy@gmail.com'}">
 					<li><a href="<c:url value="/myCart" />"><span
 							class="glyphicon glyphicon-shopping-cart"></span> CART</a>${cartSize}</li>
 				</c:if>
 				<c:if
-					test="${pageContext.request.userPrincipal.name  == 'santoshenoy'}">
+					test="${pageContext.request.userPrincipal.name  == 'santoshenoy@gmail.com'}">
 					<li><a style="color: #F5F5DC" href="<c:url value="/admin" />">VIEW
 							ALL</a></li>
 				</c:if>

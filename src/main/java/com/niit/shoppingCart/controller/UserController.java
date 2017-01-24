@@ -74,7 +74,9 @@ public class UserController {
 	}
 
 	@RequestMapping("/")
-	public String homePage() {
+	public String homePage(Model model) {
+
+		model.addAttribute("categoryList", categoryDAO.list());
 		return "home";
 	}
 
