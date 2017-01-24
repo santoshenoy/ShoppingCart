@@ -4,25 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link
-	href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-	rel="stylesheet">
-
+<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
+<script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="resources/js/jquery.min.js"/>"></script>
 <title>Payment Finalisation</title>
 <style>
 body {
-	background-image: url(resources/images/cart9.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -57,12 +44,8 @@ h2 {
 		<div class="row cart-body"
 			style="align: center; margin: 0px 230px 0px 0px">
 			<form class="form-horizontal" method="post" action="">
-
-
-
 				<div
 					class="col-lg-8 col-md-8 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
-					<!--SHIPPING METHOD-->
 					<div class="panel panel-info">
 						<div class="panel-heading">Address</div>
 						<div class="panel-body">
@@ -144,8 +127,6 @@ h2 {
 							</div>
 						</div>
 					</div>
-					<!--SHIPPING METHOD END-->
-					<!--CREDIT CART PAYMENT-->
 					<div class="panel panel-info">
 						<div class="panel-heading">
 							<span><i class="glyphicon glyphicon-lock"></i></span> Secure
@@ -244,9 +225,7 @@ h2 {
 							</div>
 						</div>
 					</div>
-					<!--CREDIT CART PAYMENT END-->
 				</div>
-
 			</form>
 		</div>
 		<div class="row cart-footer"></div>

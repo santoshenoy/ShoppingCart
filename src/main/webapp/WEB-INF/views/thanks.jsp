@@ -4,25 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link
-	href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-	rel="stylesheet">
-
+	href="<c:url value="resources/css/bootstrap.css"/>">
+<script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="resources/js/jquery.min.js"/>"></script>
 <title>Thank You</title>
 <style>
 body {
-	background-image: url(resources/images/bgk19.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 }

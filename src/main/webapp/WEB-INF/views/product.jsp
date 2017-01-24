@@ -7,12 +7,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
+<script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="resources/js/jquery.min.js"/>"></script>
 <title>Product Page</title>
 <style>
 body {
@@ -65,7 +62,6 @@ tr:nth-child(even) {
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-
 	<form:form action="product/add" commandName="product" method="post"
 		enctype="multipart/form-data">
 		<table>
@@ -115,8 +111,8 @@ tr:nth-child(even) {
 			</tr>
 			<tr>
 				<td><label> IMAGE </label></td>
-				<td><form:input type="file" path="image" placeholder="Enter Image"
-						required="true" /></td>
+				<td><form:input type="file" path="image"
+						placeholder="Enter Image" /></td>
 			</tr>
 			<tr>
 				<td align="right" colspan="2"><c:if

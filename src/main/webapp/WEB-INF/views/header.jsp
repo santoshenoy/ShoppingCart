@@ -5,13 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>GUITARMANIA</title>
+<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
+<script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="resources/js/jquery.min.js"/>"></script>
+<title></title>
 <style>
 body {
 	background-color: #ff9933;
@@ -22,31 +19,32 @@ body {
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid" style="color: white">
 		<div class="navbar-header" style="color: white">
-			<a style="color: #F5F5DC" class="navbar-brand" href="#">GUITARMANIA</a>
+			<a style="color: #F5F5DC; font-size: 30px; font-weight: bold;"
+				class="navbar-brand" href="/shoppingCart">GUITARMANIA </a>
 		</div>
-		
-		 <ul class="nav navbar-nav">
-      <c:forEach items="${categoryList}" var="category">
-      <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href=${category.name}>${category.name}<span class="caret"></span> </a>
-      <ul class="dropdown-menu">
-      <c:forEach items="${category.products}" var="product">
-      <li><a style="color:#000000" href="<c:url value='product/get/${product.id}'/>"> ${product.name} </a>
-    
-     </c:forEach>
-       <li><a style="color:#F5F5DC" href="#"></a></li>
-     </ul>
-      </li>       
-      </c:forEach>
-    </ul>
-		
+		<ul class="nav navbar-nav">
+			<c:forEach items="${categoryList}" var="category">
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href=${category.name}>${category.name}<span
+						class="caret"></span>
+				</a>
+					<ul class="dropdown-menu">
+						<c:forEach items="${category.products}" var="product">
+							<li><a style="color: #000000"
+								href="<c:url value='product/get/${product.id}'/>">
+									${product.name} </a>
+						</c:forEach>
+						<li><a style="color: #F5F5DC" href="#"></a></li>
+					</ul></li>
+			</c:forEach>
+		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li class="divider-vertical"></li>
 			<c:if test="${pageContext.request.userPrincipal.name != null}">
 				<c:if
 					test="${pageContext.request.userPrincipal.name != 'santoshenoy@gmail.com'}">
 					<li><a href="<c:url value="/myCart" />"><span
-							class="glyphicon glyphicon-shopping-cart"></span> CART</a>${cartSize}</li>
+							class="glyphicon glyphicon-shopping-cart"></span>CART</a>${cartSize}</li>
 				</c:if>
 				<c:if
 					test="${pageContext.request.userPrincipal.name  == 'santoshenoy@gmail.com'}">

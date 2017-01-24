@@ -7,12 +7,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
+<script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="resources/js/jquery.min.js"/>"></script>
 <title>Supplier Page</title>
 <style>
 body {
@@ -93,10 +90,10 @@ tr:nth-child(even) {
 				<td align="center" colspan="2"><c:if
 						test="${!empty supplier.name}">
 						<input type="submit" style="background-color: green"
-							class="btn btn-primary btn-md" value="EDIT CATEGORY" />
+							class="btn btn-primary btn-md" value="EDIT SUPPLIER" />
 					</c:if> <c:if test="${empty supplier.name}">
 						<input type="submit" style="background-color: green"
-							class="btn btn-primary btn-md" value="ADD CATEGORY" />
+							class="btn btn-primary btn-md" value="ADD SUPPLIER" />
 					</c:if></td>
 			</tr>
 		</table>

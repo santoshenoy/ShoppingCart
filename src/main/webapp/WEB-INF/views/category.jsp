@@ -7,12 +7,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
+<script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="resources/js/jquery.min.js"/>"></script>
 <title>Category Page</title>
 <style>
 body {
@@ -67,15 +64,17 @@ tr:nth-child(even) {
 				<td><label>ID</label></td>
 				<c:choose>
 					<c:when test="${!empty category.id}">
-						<td><form:input placeholder="Enter ID" path="id" disabled="true" readonly="true" /></td>
+						<td><form:input placeholder="Enter ID" path="id"
+								disabled="true" readonly="true" /></td>
 					</c:when>
 					<c:otherwise>
-						<td><form:input placeholder="Enter ID" path="id" required="true" /></td>
+						<td><form:input placeholder="Enter ID" path="id"
+								required="true" /></td>
 					</c:otherwise>
 				</c:choose>
 			</tr>
 			<tr>
-				<form:input path="id" hidden="true" /> 
+				<form:input path="id" hidden="true" />
 				<td><label>NAME</label></td>
 				<td><form:input path="name" type="text"
 						placeholder="Enter Name" required="true" /></td>

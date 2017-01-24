@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
+<script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="resources/js/jquery.min.js"/>"></script>
 <title>Admin Home</title>
 </head>
 <body>
@@ -17,9 +14,10 @@
 	<div id="adminHome">
 		<a href="category"><input type="submit"
 			style="background-color: green" class="btn btn-primary btn-md"
-			value="MANAGE CATEGORIES" /></a> &nbsp; &nbsp; <a href="supplier"><input type="submit"
-			style="background-color: green" class="btn btn-primary btn-md"
-			value="MANAGE SUPPLIERS" /></a> &nbsp; &nbsp; <a href="product"><input type="submit"
+			value="MANAGE CATEGORIES" /></a> &nbsp; &nbsp; <a href="supplier"><input
+			type="submit" style="background-color: green"
+			class="btn btn-primary btn-md" value="MANAGE SUPPLIERS" /></a> &nbsp;
+		&nbsp; <a href="product"><input type="submit"
 			style="background-color: green" class="btn btn-primary btn-md"
 			value="MANAGE PRODUCTS" /></a> &nbsp; &nbsp;
 	</div>
