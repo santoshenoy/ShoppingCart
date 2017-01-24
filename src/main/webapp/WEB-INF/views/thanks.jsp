@@ -4,17 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="<c:url value="resources/css/bootstrap.css"/>">
-<script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
-<script src="<c:url value="resources/js/jquery.min.js"/>"></script>
-<title>Thank You</title>
-<style>
-body {
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-</style>
+<link rel="stylesheet" href="resources/css/bootstrap.css">
+<title>Thank You!</title>
 </head>
 <body>
 	<div style="color: #000000; margin: 30px 0px 0px 70px">
@@ -24,6 +15,8 @@ body {
 	<h1 style="font-size: 65px; margin: 50px 0px 0px 120px">YOUR ORDER
 		HAS BEEN RECEIVED</h1>
 	<h2 style="font-size: 50px; margin: 30px 0px 0px 120px">Thank you
-		for your purchase!</h2>
+		for your purchase! You will receive an Email with further shipping and
+		delivery details. We trust it was a pleasant experience shopping with
+		GuitarMania and hope to serve you again soon!</h2>
 </body>
 </html>

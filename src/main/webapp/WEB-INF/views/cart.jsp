@@ -6,38 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
-<script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
-<script src="<c:url value="resources/js/jquery.min.js"/>"></script>
+<link rel="stylesheet" href="resources/css/bootstrap.css">
 <title>My Cart</title>
 </head>
-<style>
-body {
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-th {
-	color: white;
-	background-color: black;
-}
-
-table, th, td {
-	border: 1px solid black;
-	align: center;
-}
-
-h2 {
-	color: black;
-	font-family: "Times New Roman", Times, serif;
-}
-</style>
 <body>
-	<h1 style="color: black">
+	<h1>
 		<center>CART LIST</center>
 	</h1>
-	<div class="container"
-		style="align: center; margin: 20px 100px 0px 400px">
+	<div class="container" style="align: center; margin: 80px 230px">
 		<c:if test="${!empty cartList}">
 			<div class="row">
 				<div class="col-xs-8">
@@ -47,13 +23,14 @@ h2 {
 								<div class="row">
 									<div class="col-xs-6">
 										<h5>
-											<span class="glyphicon glyphicon-shopping-cart"></span>
-											Shopping Cart
+											<span class="glyphicon glyphicon-shopping-cart"></span> Your
+											Cart
 										</h5>
 									</div>
 									<div class="col-xs-6">
 										<a href="onLoad" type="button"
-											class="btn btn-primary btn-sm btn-block"> <span
+											class="btn btn-primary btn-sm btn-block"
+											title="Click to continue shopping"> <span
 											class="glyphicon glyphicon-share-alt"></span> CONTINUE
 											SHOPPING
 										</a>
@@ -76,7 +53,7 @@ h2 {
 									<div class="col-xs-6">
 										<div class="col-xs-6 text-right">
 											<h6>
-												<strong>${cart.price} <span class="text-muted">x</span></strong>
+												<strong>$${cart.price} <span class="text-muted">x</span></strong>
 											</h6>
 										</div>
 										<div class="col-xs-4">
@@ -84,9 +61,9 @@ h2 {
 												value="${cart.quantity}">
 										</div>
 										<div class="col-xs-4">
-
 											<a href="<c:url value='cart/delete/${cart.id}' />"><button
-													type="button" class="btn btn-link btn-xs">
+													type="button" class="btn btn-link btn-xs"
+													title="Remove this item from your cart">
 													<span class="glyphicon glyphicon-trash"> </span>
 												</button></a>
 										</div>
@@ -98,7 +75,8 @@ h2 {
 								<div class="text-center">
 									<div class="col-xs-5">
 										<a href="<c:url value="/myCart" />" type="button"
-											class="btn btn-primary btn-sm btn-block"> UPDATE CART </a>
+											class="btn btn-primary btn-sm btn-block"
+											title="Update Your Cart"> UPDATE CART </a>
 									</div>
 								</div>
 							</div>
@@ -110,7 +88,8 @@ h2 {
 								</div>
 								<div class="col-xs-5">
 									<a href="checkout" type="button"
-										class="btn btn-success btn-block"> PROCEED TO CHECKOUT </a>
+										class="btn btn-success btn-block" title="Proceed to Checkout">
+										CHECKOUT </a>
 								</div>
 							</div>
 						</div>

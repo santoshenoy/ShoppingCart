@@ -6,40 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
-<script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
-<script src="<c:url value="resources/js/jquery.min.js"/>"></script>
-<title>Proceeding to Checkout</title>
+<link rel="stylesheet" href="resources/css/bootstrap.css">
+<title>Review</title>
 </head>
-<style>
-body {
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-th {
-	color: white;
-	background-color: black;
-}
-
-table, th, td {
-	border: 1px solid black;
-	align: center;
-}
-
-h2 {
-	color: black;
-	font-family: "Times New Roman", Times, serif;
-}
-</style>
 <body>
-
-	<h1 style="color: black">
+	<h1>
 		<center>REVIEW ORDER</center>
 	</h1>
-	<div class="container"
-		style="align: center; margin: 20px 100px 0px 400px">
-
+	<div class="container" style="align: center; margin: 80px 230px">
 		<c:if test="${!empty cartList}">
 			<div class="row">
 				<div class="col-xs-8">
@@ -49,14 +23,15 @@ h2 {
 								<div class="row">
 									<div class="col-xs-6">
 										<h5>
-											<span class="glyphicon glyphicon-shopping-cart"></span>
-											REVIEW ORDER
+											<span class="glyphicon glyphicon-shopping-cart"></span> YOUR
+											CART
 										</h5>
 									</div>
 									<div class="col-xs-6">
 										<a href="<c:url value="/myCart" />" type="button"
-											class="btn btn-primary btn-sm btn-block"> <span
-											class="glyphicon glyphicon-share-alt"></span> Edit cart
+											class="btn btn-primary btn-sm btn-block"
+											title="Edit Your Cart"> <span
+											class="glyphicon glyphicon-share-alt"></span> EDIT CART
 										</a>
 									</div>
 								</div>
@@ -80,28 +55,23 @@ h2 {
 									<div class="col-xs-6">
 										<div class="col-xs-6 text-right">
 											<h4 class="text-right">
-												<strong>${cart.price}</strong>
+												<strong>$${cart.price}</strong>
 											</h4>
-
 										</div>
-
-
 									</div>
 								</div>
 								<hr>
 							</c:forEach>
-
-
-
 						</div>
 						<div class="panel-footer">
 							<div class="row text-center">
-								<div class="col-xs-9">
-									<h4 class="text-right">Total: ${sum}</h4>
+								<div class="col-xs-4">
+									<h4 class="text-right">Total: $${sum}</h4>
 								</div>
-								<div class="col-xs-3">
+								<div class="col-xs-5">
 									<a href="payment" type="button"
-										class="btn btn-success btn-block"> Proceed to Pay </a>
+										class="btn btn-success btn-block" title="Proceed to Payment">
+										PROCEED </a>
 								</div>
 							</div>
 						</div>
@@ -110,10 +80,5 @@ h2 {
 			</div>
 		</c:if>
 	</div>
-	<br>
-	<br>
-	<br>
-	<br> ​
-
 </body>
 </html>
