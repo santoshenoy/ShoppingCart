@@ -7,15 +7,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
+<link rel="stylesheet"
+	href="<c:url value="resources/css/bootstrap.css"/>">
 <script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
 <script src="<c:url value="resources/js/jquery.min.js"/>"></script>
 <title>Product Page</title>
 <style>
-body {
-	background-color: aliceblue;
-}
-
 form {
 	background-color: lightsteelblue;
 	border: 3px solid #f1f1f1;
@@ -79,7 +76,10 @@ tr:nth-child(even) {
 				</c:choose>
 			</tr>
 			<tr>
-				<form:input path="id" hidden="true" />
+				<form:input
+					style="background-color: lightsteelblue
+					; color:lightsteelblue"
+					path="id" hidden="true" readonly="true" />
 				<td><label> NAME </label></td>
 				<td><form:input path="name" type="text"
 						placeholder="Enter Name" required="true" /></td>
@@ -126,6 +126,7 @@ tr:nth-child(even) {
 			</tr>
 		</table>
 	</form:form>
+
 	<table class="tble">
 		<tr>
 			<th>ID</th>

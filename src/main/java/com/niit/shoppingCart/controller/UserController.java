@@ -5,9 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -68,10 +66,17 @@ public class UserController {
 	@RequestMapping("/register")
 	public ModelAndView showRegistrationPage(Model m) {
 		m.addAttribute("user", new User());
-		ModelAndView mv = new ModelAndView("registration");
+		ModelAndView mv = new ModelAndView("/home");
+		mv.addObject("user", user);
 		mv.addObject("showRegistrationPage", "true");
 		return mv;
 	}
+
+	/*
+	 * @RequestMapping("/Signup") public ModelAndView signup() { ModelAndView mv
+	 * = new ModelAndView("/home"); mv.addObject("user", user);
+	 * mv.addObject("isUserClickedRegisterHere", "true"); return mv; }
+	 */
 
 	@RequestMapping("/")
 	public String homePage(Model model) {
@@ -87,13 +92,12 @@ public class UserController {
 		return "home";
 	}
 
-	@RequestMapping(value = "/registered", method = RequestMethod.POST)
-	public ModelAndView registering(@ModelAttribute("user") User user) {
-		user.setRole("ROLE_USER");
-		userDAO.save(user);
-		ModelAndView mv = new ModelAndView("home");
-		mv.addObject("successMsg", "You have registered successfully!");
-		return mv;
-	}
+	/*
+	 * @RequestMapping(value = "/registered", method = RequestMethod.POST)
+	 * public ModelAndView registering(@ModelAttribute("user") User user) {
+	 * user.setRole("ROLE_USER"); userDAO.saveOrUpdate(user); ModelAndView mv =
+	 * new ModelAndView("home"); mv.addObject("successMsg",
+	 * "You have registered successfully!"); return mv; }
+	 */
 
 }

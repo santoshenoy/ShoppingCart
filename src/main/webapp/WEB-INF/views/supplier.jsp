@@ -76,7 +76,10 @@ tr:nth-child(even) {
 				</c:choose>
 			</tr>
 			<tr>
-				<form:input path="id" hidden="true" />
+				<form:input
+					style="background-color: lightsteelblue
+					; color:lightsteelblue"
+					path="id" hidden="true" readonly="true" />
 				<td><label> NAME </label></td>
 				<td><form:input path="name" type="text"
 						placeholder="Enter Name" required="true" /></td>

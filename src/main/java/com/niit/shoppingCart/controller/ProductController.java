@@ -113,10 +113,10 @@ public class ProductController {
 	public String getSelectedProduct(@PathVariable("id") String id, Model model,
 			RedirectAttributes redirectAttributes) {
 		redirectAttributes.addFlashAttribute("selectedProduct", productDAO.get(id));
-		return "redirect:/backToHome";
+		return "redirect:/shoptillyoudrop";
 	}
 
-	@RequestMapping(value = "/backToHome", method = RequestMethod.GET)
+	@RequestMapping(value = "/shoptillyoudrop", method = RequestMethod.GET)
 	public String backToHome(@ModelAttribute("selectedProduct") final Product selectedProduct, final Model model) {
 		model.addAttribute("selectedProduct", selectedProduct);
 		model.addAttribute("categoryList", this.categoryDAO.list());
