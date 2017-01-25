@@ -80,6 +80,13 @@ public class UserController {
 		return "home";
 	}
 
+	@RequestMapping("onLoad")
+	public String onLoad(Model model) {
+
+		model.addAttribute("categoryList", categoryDAO.list());
+		return "home";
+	}
+
 	@RequestMapping(value = "/registered", method = RequestMethod.POST)
 	public ModelAndView registering(@ModelAttribute("user") User user) {
 		user.setRole("ROLE_USER");

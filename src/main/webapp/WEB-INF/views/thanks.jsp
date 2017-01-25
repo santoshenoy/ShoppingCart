@@ -12,11 +12,12 @@
 		<a style="color: #000000; font-size: 2.0em" href="onLoad"><span
 			class="glyphicon glyphicon-home"></span></a>
 	</div>
-	<h1 style="font-size: 65px; margin: 50px 0px 0px 120px">YOUR ORDER
-		HAS BEEN RECEIVED</h1>
-	<h2 style="font-size: 50px; margin: 30px 0px 0px 120px">Thank you
+	<label style="font-size: 65px; margin: 50px 0px 0px 120px">YOUR ORDER
+		HAS BEEN RECEIVED!</label>
+		<br>
+	<label style="font-size: 30px; margin: 30px 0px 0px 120px">Thank you
 		for your purchase! You will receive an Email with further shipping and
 		delivery details. We trust it was a pleasant experience shopping with
-		GuitarMania and hope to serve you again soon!</h2>
+		GuitarMania and hope to serve you again soon!</label>
 </body>
 </html>
