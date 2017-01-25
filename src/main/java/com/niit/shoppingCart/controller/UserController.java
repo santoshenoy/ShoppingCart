@@ -66,7 +66,7 @@ public class UserController {
 	@RequestMapping("/register")
 	public ModelAndView showRegistrationPage(Model m) {
 		m.addAttribute("user", new User());
-		ModelAndView mv = new ModelAndView("/home");
+		ModelAndView mv = new ModelAndView("home");
 		mv.addObject("user", user);
 		mv.addObject("showRegistrationPage", "true");
 		return mv;

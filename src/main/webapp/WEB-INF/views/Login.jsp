@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="resources/css/bootstrap.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
 <style>
@@ -23,30 +24,12 @@ input[type=text], input[type=password] {
 form {
 	background-color: cornsilk;
 	border: 3px solid #f1f1f1;
-	width: 30%;
+	width: 28%;
 	margin: 0 auto;
-}
-
-.sbmtbtn {
-	color: white;
-	padding: 7px 15px; margin 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 30%;
 }
 
 .container {
 	padding: 16px;
-}
-
-.sbmtbtn:hover {
-	background-color: #3e8e41
-}
-
-.sbmtbtn:active {
-	background-color: #3e8e41;
-	box-shadow: 0 5px #666;
-	transform: translateY(4px);
 }
 </style>
 </head>
@@ -58,7 +41,7 @@ form {
 				placeholder="Enter Email" name="username" required> <br>
 			<label><b>PASSWORD:</b></label> <br> <input type="password"
 				placeholder="Enter Password" name="password" required> <br>
-			<button type="submit" style="background-color: green" class="sbmtbtn">Log
+			<button type="submit" class="btn btn-success" style="width: 30%" title="Click to Log In">Log
 				In</button>
 		</div>
 		<input type="hidden" name="${_csrf.parameterName}"
