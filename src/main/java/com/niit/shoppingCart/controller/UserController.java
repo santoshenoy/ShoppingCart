@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.dao.SupplierDAO;
@@ -45,13 +44,16 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/admin")
-	public String getAdmin() {
+	public String getAdmin(Model m) {
+
+		m.addAttribute("categoryList", categoryDAO.list());
 		return "adminhome";
 	}
 
 	@RequestMapping(value = "/login")
 	public String login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout, Model model) {
+		model.addAttribute("categoryList", categoryDAO.list());
 		if (error != null) {
 			log.debug("Error");
 			model.addAttribute("loginerror", "Invalid username and/or password");
@@ -64,19 +66,11 @@ public class UserController {
 	}
 
 	@RequestMapping("/register")
-	public ModelAndView showRegistrationPage(Model m) {
-		m.addAttribute("user", new User());
-		ModelAndView mv = new ModelAndView("home");
-		mv.addObject("user", user);
-		mv.addObject("showRegistrationPage", "true");
-		return mv;
-	}
+	public String showRegistrationPage(Model model) {
 
-	/*
-	 * @RequestMapping("/Signup") public ModelAndView signup() { ModelAndView mv
-	 * = new ModelAndView("/home"); mv.addObject("user", user);
-	 * mv.addObject("isUserClickedRegisterHere", "true"); return mv; }
-	 */
+		model.addAttribute("categoryList", categoryDAO.list());
+		return "redirect:/memberShip.obj";
+	}
 
 	@RequestMapping("/")
 	public String homePage(Model model) {
@@ -91,13 +85,5 @@ public class UserController {
 		model.addAttribute("categoryList", categoryDAO.list());
 		return "home";
 	}
-
-	/*
-	 * @RequestMapping(value = "/registered", method = RequestMethod.POST)
-	 * public ModelAndView registering(@ModelAttribute("user") User user) {
-	 * user.setRole("ROLE_USER"); userDAO.saveOrUpdate(user); ModelAndView mv =
-	 * new ModelAndView("home"); mv.addObject("successMsg",
-	 * "You have registered successfully!"); return mv; }
-	 */
 
 }

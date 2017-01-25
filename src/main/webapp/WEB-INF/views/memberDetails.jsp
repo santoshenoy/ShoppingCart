@@ -53,7 +53,7 @@ form {
 				</div>
 			</c:forEach>
 			<form:label path="mail">
-				<b>E-MAIL ADDRESS:</b>
+				<b>EMAIL ADDRESS:</b>
 			</form:label>
 			<br>
 			<form:input type="text" placeholder="Enter Email Address" path="mail"

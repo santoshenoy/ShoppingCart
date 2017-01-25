@@ -62,7 +62,7 @@ body {
 					href="<c:url value="login" />"><span
 						class="glyphicon glyphicon-log-in"></span> Log In</a></li>
 				<li><a style="color: #F5F5DC; margin: 0px 0px 0px 0px"
-					href="<c:url value="memberShip.obj" />"><span
+					href="<c:url value="register" />"><span
 						class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 			</c:if>
 		</ul>

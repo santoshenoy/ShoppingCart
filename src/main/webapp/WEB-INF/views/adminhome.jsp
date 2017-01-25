@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="resources/css/bootstrap.css">
+<script src="resources/js/jquery.min.js" /></script>
 <title>Admin Home</title>
 </head>
 <body>
