@@ -8,10 +8,7 @@
 <title>Thank You!</title>
 </head>
 <body>
-	<div style="color: #000000; margin: 30px 0px 0px 70px">
-		<a style="color: #000000; font-size: 2.0em" href="onLoad"><span
-			class="glyphicon glyphicon-home"></span></a>
-	</div>
+	<jsp:include page="header.jsp"></jsp:include>
 	<label style="font-size: 65px; margin: 50px 0px 0px 120px">YOUR ORDER
 		HAS BEEN RECEIVED!</label>
 		<br>

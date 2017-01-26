@@ -10,6 +10,7 @@
 <title>Review</title>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<h1>
 		<center>REVIEW ORDER</center>
 	</h1>

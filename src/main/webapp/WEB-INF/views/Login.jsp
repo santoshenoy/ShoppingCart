@@ -13,7 +13,7 @@ body {
 }
 
 input[type=text], input[type=password] {
-	width: 30%;
+	width: 27%;
 	padding: 12px 20px;
 	margin: 8px 0;
 	display: inline-block;
@@ -22,9 +22,9 @@ input[type=text], input[type=password] {
 }
 
 form {
-	background-color: cornsilk;
+	background-color: lavender;
 	border: 3px solid #f1f1f1;
-	width: 28%;
+	width: 25%;
 	margin: 0 auto;
 }
 
@@ -39,10 +39,11 @@ form {
 		<div class="container">
 			<label><b>EMAIL ADDRESS: </b></label> <br> <input type="text"
 				placeholder="Enter Email" name="username" required> <br>
-			<label><b>PASSWORD:</b></label> <br> <input type="password"
-				placeholder="Enter Password" name="password" required> <br>
-			<button type="submit" class="btn btn-success" style="width: 30%" title="Click to Log In">Log
-				In</button>
+			<br> <label><b>PASSWORD:</b></label> <br> <input
+				type="password" placeholder="Enter Password" name="password"
+				required> <br>
+			<button type="submit" class="btn btn-success" style="width: 27%"
+				title="Click to Log In">Log In</button>
 		</div>
 		<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />

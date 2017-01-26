@@ -23,7 +23,7 @@ input[type=text], [type=password] {
 }
 
 form {
-	background-color: cornsilk;
+	background-color: lavender;
 	border: 3px solid #f1f1f1;
 	width: 37%;
 	margin: 0 auto;
@@ -44,7 +44,6 @@ form {
 			<br>
 			<form:input type="text" placeholder="Enter Name" path="name"
 				name="name" required="true" />
-			<br>
 			<c:forEach
 				items="${flowRequestContext.messageContext.getMessagesBySource('name')}"
 				var="err">
@@ -52,13 +51,14 @@ form {
 					<span>${err.text}</span>
 				</div>
 			</c:forEach>
+			<br>
+			<br>
 			<form:label path="mail">
 				<b>EMAIL ADDRESS:</b>
 			</form:label>
 			<br>
 			<form:input type="text" placeholder="Enter Email Address" path="mail"
 				name="mail" required="true" />
-			<br>
 			<c:forEach
 				items="${flowRequestContext.messageContext.getMessagesBySource('email')}"
 				var="err">
@@ -66,13 +66,14 @@ form {
 					<span>${err.text}</span>
 				</div>
 			</c:forEach>
+			<br>
+			<br>
 			<form:label path="id">
 				<b>USERNAME:</b>
 			</form:label>
 			<br>
 			<form:input type="text" placeholder="Enter Username" path="id"
 				name="id" required="true" />
-			<br>
 			<c:forEach
 				items="${flowRequestContext.messageContext.getMessagesBySource('id')}"
 				var="err">
@@ -80,13 +81,14 @@ form {
 					<span>${err.text}</span>
 				</div>
 			</c:forEach>
+			<br>
+			<br>
 			<form:label path="password">
 				<b>PASSWORD:</b>
 			</form:label>
 			<br>
 			<form:input type="password" placeholder="Enter Password"
 				path="password" name="password" required="true" />
-			<br>
 			<c:forEach
 				items="${flowRequestContext.messageContext.getMessagesBySource('password')}"
 				var="err">
@@ -94,13 +96,14 @@ form {
 					<span>${err.text}</span>
 				</div>
 			</c:forEach>
+			<br>
+			<br>
 			<form:label path="mobile">
 				<b>MOBILE NUMBER:</b>
 			</form:label>
 			<br>
 			<form:input type="text" placeholder="Enter Mobile Number"
 				path="mobile" name="mobile" required="true" />
-			<br>
 			<c:forEach
 				items="${flowRequestContext.messageContext.getMessagesBySource('mobile')}"
 				var="err">
@@ -108,6 +111,7 @@ form {
 					<span>${err.text}</span>
 				</div>
 			</c:forEach>
+			<br>
 			<br> <input name="_eventId_submit" type="submit"
 				class="btn btn-success" style="width: 40%"
 				value="Register" title="Click to Register" />

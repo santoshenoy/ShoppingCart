@@ -10,6 +10,7 @@
 <title>My Cart</title>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<h1>
 		<center>CART LIST</center>
 	</h1>
@@ -26,14 +27,6 @@
 											<span class="glyphicon glyphicon-shopping-cart"></span> Your
 											Cart
 										</h5>
-									</div>
-									<div class="col-xs-6">
-										<a href="onLoad" type="button"
-											class="btn btn-primary btn-sm btn-block"
-											title="Click to continue shopping"> <span
-											class="glyphicon glyphicon-share-alt"></span> CONTINUE
-											SHOPPING
-										</a>
 									</div>
 								</div>
 							</div>

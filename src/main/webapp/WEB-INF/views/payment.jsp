@@ -8,6 +8,7 @@
 <title>Payment</title>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<h1>
 		<center>PAYMENT AND SHIPPING DETAILS</center>
 	</h1>

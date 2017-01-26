@@ -8,13 +8,9 @@
 <title>Welcome to GuitarMania!</title>
 <script src="resources/js/jquery.min.js"></script>
 <style>
-body {
-	background-color: #ff9933;
-}
-
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 70%;
-	margin: auto;
+	max-height: 502px;
+	overflow: hidden;
 }
 </style>
 </head>
@@ -28,22 +24,30 @@ body {
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
 				<li data-target="#myCarousel" data-slide-to="3"></li>
+				<li data-target="#myCarousel" data-slide-to="4"></li>
+				<li data-target="#myCarousel" data-slide-to="5"></li>
 			</ol>
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="resources/images/Pic1.jpg" width=460 height=345>
+					<img src="resources/images/Pic10.jpg" width="1200px">
 				</div>
 
 				<div class="item">
-					<img src="resources/images/Pic2.jpg" width=460 height=345>
+					<img src="resources/images/Pic14.jpg" width="1200px">
 				</div>
 
 				<div class="item">
-					<img src="resources/images/Pic3.jpg" width=460 height=345>
+					<img src="resources/images/Pic11.jpg" width="1200px">
 				</div>
 
 				<div class="item">
-					<img src="resources/images/Pic4.jpg" width=460 height=345>
+					<img src="resources/images/Pic9.jpg" width="1200px">
+				</div>
+				<div class="item">
+					<img src="resources/images/Pic12.jpg" width="1200px">
+				</div>
+				<div class="item">
+					<img src="resources/images/Pic20.jpg" width="1200px">
 				</div>
 			</div>
 			<a class="left carousel-control" href="#myCarousel" role="button"
