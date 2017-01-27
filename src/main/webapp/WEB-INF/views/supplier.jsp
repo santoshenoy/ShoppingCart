@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
+<link rel="stylesheet"
+	href="<c:url value="resources/css/bootstrap.css"/>">
 <script src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
 <script src="<c:url value="resources/js/jquery.min.js"/>"></script>
 <title>Supplier Page</title>
@@ -123,5 +124,9 @@ tr:nth-child(even) {
 			</tr>
 		</c:forEach>
 	</table>
+	<br>
+	<br>
+	<br>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

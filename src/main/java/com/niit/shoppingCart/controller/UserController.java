@@ -45,14 +45,16 @@ public class UserController {
 
 	@RequestMapping(value = "/admin")
 	public String getAdmin(Model m) {
-
+		log.debug("Start of the getAdmin method");
 		m.addAttribute("categoryList", categoryDAO.list());
+		log.debug("Ending of the getAdmin method");
 		return "adminhome";
 	}
 
 	@RequestMapping(value = "/login")
 	public String login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout, Model model) {
+		log.debug("Start of the login method");
 		model.addAttribute("categoryList", categoryDAO.list());
 		if (error != null) {
 			log.debug("Error");
@@ -62,27 +64,31 @@ public class UserController {
 			log.debug("Logout Called");
 			model.addAttribute("loginmsg", "You have logged out");
 		}
+		log.debug("End of the login method");
 		return "login";
 	}
 
 	@RequestMapping("/register")
 	public String showRegistrationPage(Model model) {
-
+		log.debug("Start of the showRegistrationPage method");
 		model.addAttribute("categoryList", categoryDAO.list());
+		log.debug("End of the showRegistrationPage method");
 		return "redirect:/memberShip.obj";
 	}
 
 	@RequestMapping("/")
 	public String homePage(Model model) {
-
+		log.debug("Start of the homePage method");
 		model.addAttribute("categoryList", categoryDAO.list());
+		log.debug("End of the homePage method");
 		return "home";
 	}
 
 	@RequestMapping("onLoad")
 	public String onLoad(Model model) {
-
+		log.debug("Start of the onLoad method");
 		model.addAttribute("categoryList", categoryDAO.list());
+		log.debug("End of the onLoad method");
 		return "home";
 	}
 

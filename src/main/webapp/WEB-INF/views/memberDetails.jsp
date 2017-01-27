@@ -51,8 +51,7 @@ form {
 					<span>${err.text}</span>
 				</div>
 			</c:forEach>
-			<br>
-			<br>
+			<br> <br>
 			<form:label path="mail">
 				<b>EMAIL ADDRESS:</b>
 			</form:label>
@@ -66,8 +65,7 @@ form {
 					<span>${err.text}</span>
 				</div>
 			</c:forEach>
-			<br>
-			<br>
+			<br> <br>
 			<form:label path="id">
 				<b>USERNAME:</b>
 			</form:label>
@@ -81,8 +79,7 @@ form {
 					<span>${err.text}</span>
 				</div>
 			</c:forEach>
-			<br>
-			<br>
+			<br> <br>
 			<form:label path="password">
 				<b>PASSWORD:</b>
 			</form:label>
@@ -96,8 +93,7 @@ form {
 					<span>${err.text}</span>
 				</div>
 			</c:forEach>
-			<br>
-			<br>
+			<br> <br>
 			<form:label path="mobile">
 				<b>MOBILE NUMBER:</b>
 			</form:label>
@@ -111,11 +107,15 @@ form {
 					<span>${err.text}</span>
 				</div>
 			</c:forEach>
-			<br>
-			<br> <input name="_eventId_submit" type="submit"
-				class="btn btn-success" style="width: 40%"
-				value="Register" title="Click to Register" />
+			<br> <br> <input name="_eventId_submit" type="submit"
+				class="btn btn-success" style="width: 40%" value="Register"
+				title="Click to Register" />
 		</div>
 	</form:form>
+	<br>
+	<br>
+	<br>
+	<br>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -4,6 +4,8 @@ import java.security.Principal;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,8 @@ import com.niit.shoppingcart.model.User;
 
 @Controller
 public class CartController {
+
+	public static Logger log = LoggerFactory.getLogger(CartController.class);
 
 	@Autowired(required = true)
 	Cart cart;
@@ -46,6 +50,7 @@ public class CartController {
 
 	@RequestMapping(value = "/myCart", method = RequestMethod.GET)
 	public String myCart(Model model, Principal principal) {
+		log.debug("Beginning of the myCart method");
 		try {
 			model.addAttribute("cart", new Cart());
 			model.addAttribute("cartList", this.cartDAO.userCartList(principal.getName()));
@@ -55,23 +60,24 @@ public class CartController {
 			int i;
 			int s = 0;
 			int n = cartDAO.userCartList(principal.getName()).size();
-			System.out.println(n);
+			log.debug("Size=" + n);
 			for (i = 0; i < n; i++) {
 				s = s + cartDAO.userCartList(principal.getName()).get(i).getPrice();
 			}
-			System.out.print(s);
+			log.debug("Sum" + s);
 			model.addAttribute("sum", s);
 
 		} catch (Exception ex) {
-			System.out.println("ex.getMessage");
+			log.debug("ex.getMessage");
 		}
+		log.debug("Ending of the myCart method");
 		return "cart";
 	}
 
 	@RequestMapping(value = "cart/add/{id}", method = RequestMethod.GET)
 	public String addToCart(@PathVariable("id") String id, HttpServletRequest request, Principal principal) {
+		log.debug("Beginning of the addToCart method");
 		try {
-
 			Product product = productDAO.get(id);
 			Cart cart = new Cart();
 			cart.setPrice(product.getPrice());
@@ -80,53 +86,55 @@ public class CartController {
 			cart.setQuantity(1);
 			cart.setU_id(principal.getName());
 			cart.setStatus("N");
-
 			cartDAO.addCart(cart);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			log.debug(e.getMessage());
 		}
+		log.debug("Ending of the addToCart method");
 		return "redirect:/";
-
 	}
 
 	@RequestMapping(value = "/checkout", method = RequestMethod.GET)
 	public String checkout(Model model, Principal principal) {
-		int i, j = 0;
+		log.debug("Beginning of the Checkout method");
+		int i;
 		int s = 0;
-		int m = 0;
 		int n = cartDAO.userCartList(principal.getName()).size();
-		System.out.println(n);
+		log.debug("Size = " + n);
 		for (i = 0; i < n; i++) {
 			s = s + cartDAO.userCartList(principal.getName()).get(i).getPrice();
 		}
-		System.out.print(s);
+		log.debug("Sum= " + s);
 		model.addAttribute("sum", s);
 		model.addAttribute("cart", new Cart());
 		model.addAttribute("cartList", this.cartDAO.userCartList(principal.getName()));
 		model.addAttribute("categoryList", this.categoryDAO.list());
-		int k = cartDAO.userCartList(principal.getName()).size();
-		for (i = 0; i < k; i++) {
-			m = m + cartDAO.userCartList(principal.getName()).get(i).getQuantity();
-		}
-		model.addAttribute("quantity", m);
+		log.debug("Ending of the Checkout method");
 		return "/checkout";
 
 	}
 
 	@RequestMapping("/cart/delete/{id}")
 	public String deleteCart(@PathVariable("id") int id, Model model) {
+		log.debug("Beginning of the deleteCart method");
 		cartDAO.deleteCart(id);
+		log.debug("Ending of the deleteCart method");
 		return "redirect:/myCart";
 	}
 
 	@RequestMapping("/payment")
 	public String getPayment(Model model) {
+		log.debug("Beginning of the payment method");
 		model.addAttribute("categoryList", this.categoryDAO.list());
+		log.debug("Ending of the payment method");
 		return "payment";
 	}
 
 	@RequestMapping("/thanks")
-	public String getThanks() {
+	public String getThanks(Model model) {
+		log.debug("Beginning of the getThanks method");
+		model.addAttribute("categoryList", this.categoryDAO.list());
+		log.debug("Ending of the getThanks method");
 		return "thanks";
 	}
 

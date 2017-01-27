@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="resources/css/bootstrap.css">
+<script src="resources/js/jquery.min.js" /></script>
 <title>Payment</title>
 </head>
 <body>
@@ -22,8 +22,9 @@
 						class="col-lg-8 col-md-8 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
 						<div class="panel panel-info">
 							<div class="panel-heading"
-								style="background-color: #ff9933; color: navy"> <strong> SHIPPING
-								ADDRESS </strong></div>
+								style="background-color: #ff9933; color: navy">
+								<strong> SHIPPING ADDRESS </strong>
+							</div>
 							<div class="panel-body">
 								<div class="form-group">
 									<div class="col-md-6 col-xs-12">
@@ -38,8 +39,7 @@
 											placeholder="Enter Last Name" required />
 									</div>
 								</div>
-								<br>
-								<br>
+								<br> <br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>ADDRESS:</strong>
@@ -49,8 +49,7 @@
 											placeholder="Enter Address" required />
 									</div>
 								</div>
-								<br>
-								<br>
+								<br> <br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>CITY:</strong>
@@ -60,8 +59,7 @@
 											placeholder="Enter City" required />
 									</div>
 								</div>
-								<br>
-								<br>
+								<br> <br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>STATE:</strong>
@@ -71,8 +69,7 @@
 											placeholder="Enter State" required />
 									</div>
 								</div>
-								<br>
-								<br>
+								<br> <br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>COUNTRY:</strong>
@@ -82,8 +79,7 @@
 											placeholder="Enter Country" required />
 									</div>
 								</div>
-								<br>
-								<br>
+								<br> <br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>ZIP/POSTAL CODE:</strong>
@@ -93,8 +89,7 @@
 											placeholder="Enter ZIP/Postal Code" required />
 									</div>
 								</div>
-								<br>
-								<br>
+								<br> <br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>MOBILE NUMBER:</strong>
@@ -104,8 +99,7 @@
 											placeholder="Enter Mobile Number" required />
 									</div>
 								</div>
-								<br>
-								<br>
+								<br> <br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>EMAIL ADDRESS:</strong>
@@ -211,5 +205,6 @@
 			<div class="row cart-footer"></div>
 		</div>
 	</form>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

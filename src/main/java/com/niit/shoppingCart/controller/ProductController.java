@@ -53,13 +53,15 @@ public class ProductController {
 	private Path path;
 
 	@RequestMapping("/product")
-	public String showRegistrationPage(Model m) {
+	public String showProductPage(Model m) {
+		log.debug("Beginning of the showProductPage method");
 		m.addAttribute("product", new Product());
 		m.addAttribute("productList", productDAO.list());
 		m.addAttribute("supplier", new Supplier());
 		m.addAttribute("supplierList", supplierDAO.list());
 		m.addAttribute("category", new Category());
 		m.addAttribute("categoryList", categoryDAO.list());
+		log.debug("Ending of the showProductPage method");
 		return "product";
 	}
 
@@ -77,16 +79,15 @@ public class ProductController {
 		product.setSupplier_id(supplier.getId());
 		productDAO.addProduct(product);
 		MultipartFile file = product.getImage();
-		System.out.println(product.getImage());
 		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
 		path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + product.getId() + ".jpg");
 		if (file != null && !file.isEmpty()) {
 			try {
 				file.transferTo(new File(path.toString()));
-				log.debug("image uploaded....");
+				log.debug("Image Uploaded");
 			} catch (Exception e) {
 				e.printStackTrace();
-				throw new RuntimeException("image saving failed", e);
+				throw new RuntimeException("Image Saving Failed", e);
 			}
 		}
 		log.debug("Ending of the addProduct Method");
@@ -95,31 +96,39 @@ public class ProductController {
 
 	@RequestMapping("product-delete-{id}")
 	public String deleteProduct(@PathVariable("id") String id, Model model) throws Exception {
+		log.debug("Beginning of the deleteProduct method");
 		productDAO.deleteProduct(id);
 		model.addAttribute("successMsg", "Deleted Successfully");
+		log.debug("Ending of the deleteProduct method");
 		return "redirect:/product";
 	}
 
 	@RequestMapping(value = "product-edit-{id}", method = RequestMethod.GET)
 	public String editProduct(@PathVariable("id") String id, Model model) throws Exception {
+		log.debug("Beginning of the editProduct method");
 		model.addAttribute("product", this.productDAO.get(id));
 		model.addAttribute("productList", this.productDAO.list());
 		model.addAttribute("supplierList", this.supplierDAO.list());
 		model.addAttribute("categoryList", this.categoryDAO.list());
+		log.debug("Ending of the editProduct method");
 		return "product";
 	}
 
 	@RequestMapping(value = "product/get/{id}")
 	public String getSelectedProduct(@PathVariable("id") String id, Model model,
 			RedirectAttributes redirectAttributes) {
+		log.debug("Beginning of the getSelectedProduct method");
 		redirectAttributes.addFlashAttribute("selectedProduct", productDAO.get(id));
+		log.debug("Ending of the getSelectedProduct method");
 		return "redirect:/shoptillyoudrop";
 	}
 
 	@RequestMapping(value = "/shoptillyoudrop", method = RequestMethod.GET)
 	public String backToHome(@ModelAttribute("selectedProduct") final Product selectedProduct, final Model model) {
+		log.debug("Beginning of the backToHome method");
 		model.addAttribute("selectedProduct", selectedProduct);
 		model.addAttribute("categoryList", this.categoryDAO.list());
+		log.debug("Ending of the backToHome method");
 		return "item";
 	}
 

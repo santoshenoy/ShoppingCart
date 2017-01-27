@@ -160,5 +160,9 @@ tr:nth-child(even) {
 			</tr>
 		</c:forEach>
 	</table>
+	<br>
+	<br>
+	<br>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
