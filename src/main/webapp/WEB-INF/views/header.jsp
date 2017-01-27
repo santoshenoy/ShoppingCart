@@ -36,8 +36,8 @@ body {
 			<c:forEach items="${categoryList}" var="category">
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href=${category.name
-					} style="color: #000080">${category.name}<span
-						class="caret"></span>
+					}
+					style="color: #000080">${category.name}<span class="caret"></span>
 				</a>
 					<ul class="dropdown-menu">
 						<c:forEach items="${category.products}" var="product">

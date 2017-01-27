@@ -19,21 +19,14 @@
 			<div class="row">
 				<div class="col-xs-8">
 					<div class="panel panel-info">
-						<div class="panel-heading">
+						<div class="panel-heading" style="background-color: #ff9933">
 							<div class="panel-title">
 								<div class="row">
 									<div class="col-xs-6">
-										<h5>
-											<span class="glyphicon glyphicon-shopping-cart"></span> YOUR
-											CART
+										<h5 style="color: navy">
+											<span class="glyphicon glyphicon-shopping-cart"
+												style="color: navy"></span> <strong> YOUR CART </strong>
 										</h5>
-									</div>
-									<div class="col-xs-6">
-										<a href="<c:url value="/myCart" />" type="button"
-											class="btn btn-primary btn-sm btn-block"
-											title="Edit Your Cart"> <span
-											class="glyphicon glyphicon-share-alt"></span> EDIT CART
-										</a>
 									</div>
 								</div>
 							</div>

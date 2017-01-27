@@ -21,7 +21,9 @@
 					<div
 						class="col-lg-8 col-md-8 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
 						<div class="panel panel-info">
-							<div class="panel-heading">SHIPPING ADDRESS</div>
+							<div class="panel-heading"
+								style="background-color: #ff9933; color: navy"> <strong> SHIPPING
+								ADDRESS </strong></div>
 							<div class="panel-body">
 								<div class="form-group">
 									<div class="col-md-6 col-xs-12">
@@ -36,6 +38,8 @@
 											placeholder="Enter Last Name" required />
 									</div>
 								</div>
+								<br>
+								<br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>ADDRESS:</strong>
@@ -45,6 +49,8 @@
 											placeholder="Enter Address" required />
 									</div>
 								</div>
+								<br>
+								<br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>CITY:</strong>
@@ -54,6 +60,8 @@
 											placeholder="Enter City" required />
 									</div>
 								</div>
+								<br>
+								<br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>STATE:</strong>
@@ -63,6 +71,8 @@
 											placeholder="Enter State" required />
 									</div>
 								</div>
+								<br>
+								<br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>COUNTRY:</strong>
@@ -72,6 +82,8 @@
 											placeholder="Enter Country" required />
 									</div>
 								</div>
+								<br>
+								<br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>ZIP/POSTAL CODE:</strong>
@@ -81,6 +93,8 @@
 											placeholder="Enter ZIP/Postal Code" required />
 									</div>
 								</div>
+								<br>
+								<br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>MOBILE NUMBER:</strong>
@@ -90,6 +104,8 @@
 											placeholder="Enter Mobile Number" required />
 									</div>
 								</div>
+								<br>
+								<br>
 								<div class="form-group">
 									<div class="col-md-12">
 										<strong>EMAIL ADDRESS:</strong>
@@ -102,9 +118,11 @@
 							</div>
 						</div>
 						<div class="panel panel-info">
-							<div class="panel-heading">
-								<span><i class="glyphicon glyphicon-lock"></i></span> SECURE
-								PAYMENT
+							<div class="panel-heading" style="background-color: #ff9933">
+								<h5 style="color: navy">
+									<span><i class="glyphicon glyphicon-lock"
+										style="color: navy"></i></span> <strong> SECURE PAYMENT </strong>
+								</h5>
 							</div>
 							<div class="panel-body">
 								<div class="form-group">
@@ -180,7 +198,8 @@
 								</div>
 								<div class="form-group">
 									<div class="col-md-6 col-sm-6 col-xs-12">
-										<button type="submit" class="btn btn-success btn-block" title="Click to place your order!">
+										<button type="submit" class="btn btn-success btn-block"
+											title="Click to place your order!">
 											PLACE ORDER </a>
 									</div>
 								</div>

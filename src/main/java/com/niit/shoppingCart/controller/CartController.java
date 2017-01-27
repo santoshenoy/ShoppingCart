@@ -52,8 +52,7 @@ public class CartController {
 			model.addAttribute("category", new Category());
 			model.addAttribute("categoryList", this.categoryDAO.list());
 			model.addAttribute("displayCart", "true");
-
-			int i, j = 0;
+			int i;
 			int s = 0;
 			int n = cartDAO.userCartList(principal.getName()).size();
 			System.out.println(n);
@@ -67,7 +66,6 @@ public class CartController {
 			System.out.println("ex.getMessage");
 		}
 		return "cart";
-
 	}
 
 	@RequestMapping(value = "cart/add/{id}", method = RequestMethod.GET)
@@ -95,6 +93,7 @@ public class CartController {
 	public String checkout(Model model, Principal principal) {
 		int i, j = 0;
 		int s = 0;
+		int m = 0;
 		int n = cartDAO.userCartList(principal.getName()).size();
 		System.out.println(n);
 		for (i = 0; i < n; i++) {
@@ -104,7 +103,12 @@ public class CartController {
 		model.addAttribute("sum", s);
 		model.addAttribute("cart", new Cart());
 		model.addAttribute("cartList", this.cartDAO.userCartList(principal.getName()));
-
+		model.addAttribute("categoryList", this.categoryDAO.list());
+		int k = cartDAO.userCartList(principal.getName()).size();
+		for (i = 0; i < k; i++) {
+			m = m + cartDAO.userCartList(principal.getName()).get(i).getQuantity();
+		}
+		model.addAttribute("quantity", m);
 		return "/checkout";
 
 	}
@@ -116,7 +120,8 @@ public class CartController {
 	}
 
 	@RequestMapping("/payment")
-	public String getPayment() {
+	public String getPayment(Model model) {
+		model.addAttribute("categoryList", this.categoryDAO.list());
 		return "payment";
 	}
 

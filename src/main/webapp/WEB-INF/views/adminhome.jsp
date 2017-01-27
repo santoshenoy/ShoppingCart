@@ -19,5 +19,13 @@
 			style="background-color: green" class="btn btn-primary btn-md"
 			value="MANAGE PRODUCTS" /></a> &nbsp; &nbsp;
 	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
