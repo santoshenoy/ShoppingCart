@@ -19,6 +19,7 @@ import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.model.Cart;
 import com.niit.shoppingcart.model.Category;
+import com.niit.shoppingcart.model.Payment;
 import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.Shipping;
 import com.niit.shoppingcart.model.User;
@@ -138,6 +139,15 @@ public class CartController {
 		model.addAttribute("categoryList", this.categoryDAO.list());
 		log.debug("Ending of the getThanks method");
 		return "thanks";
+	}
+
+	@RequestMapping("/payment")
+	public String getPayment(Model model) {
+		log.debug("Beginning of the getPayment method");
+		model.addAttribute("payment", new Payment());
+		model.addAttribute("categoryList", this.categoryDAO.list());
+		log.debug("Ending of the getPayment method");
+		return "payment";
 	}
 
 }

@@ -14,7 +14,7 @@ body {
 	background-color: #ff9933;
 }
 
-input[type=text], [type=password] {
+input[type=text] {
 	width: 40%;
 	padding: 12px 20px;
 	margin: 8px 0;

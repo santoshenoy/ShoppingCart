@@ -29,7 +29,7 @@ public class ShippingController {
 		log.debug("Beginning of the addShipment Method");
 		shippingDAO.addShipment(shipping);
 		log.debug("Ending of the addShipment Method");
-		return "redirect:/thanks";
+		return "redirect:/payment";
 	}
 
 }
