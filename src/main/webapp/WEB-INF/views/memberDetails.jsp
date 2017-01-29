@@ -36,7 +36,7 @@ form {
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<form:form modelAttribute="">
+	<form:form modelAttribute="user">
 		<div class="container">
 			<form:label path="name">
 				<b>NAME:</b>

@@ -19,8 +19,8 @@ import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.model.Cart;
 import com.niit.shoppingcart.model.Category;
-import com.niit.shoppingcart.model.Payment;
 import com.niit.shoppingcart.model.Product;
+import com.niit.shoppingcart.model.Shipping;
 import com.niit.shoppingcart.model.User;
 
 @Controller
@@ -123,13 +123,13 @@ public class CartController {
 		return "redirect:/myCart";
 	}
 
-	@RequestMapping("/payment")
-	public String getPayment(Model model) {
-		log.debug("Beginning of the payment method");
-		model.addAttribute("payment", new Payment());
+	@RequestMapping("/shipping")
+	public String getShipment(Model model) {
+		log.debug("Beginning of the getShipment method");
+		model.addAttribute("shipping", new Shipping());
 		model.addAttribute("categoryList", this.categoryDAO.list());
-		log.debug("Ending of the payment method");
-		return "payment";
+		log.debug("Ending of the getShipment method");
+		return "shipping";
 	}
 
 	@RequestMapping("/thanks")

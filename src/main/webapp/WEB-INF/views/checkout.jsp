@@ -63,8 +63,8 @@
 									<h4 class="text-right">Total: $${sum}</h4>
 								</div>
 								<div class="col-xs-5">
-									<a href="payment" type="button"
-										class="btn btn-success btn-block" title="Proceed to Payment">
+									<a href="shipping" type="button"
+										class="btn btn-success btn-block" title="Proceed to Shipment">
 										PROCEED </a>
 								</div>
 							</div>
