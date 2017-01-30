@@ -25,11 +25,11 @@
 				<ul style="list-style-type: none">
 					<li style="font-size: 15px"><strong> Keep In Touch: </strong></li>
 					<br>
-					<li><a href="https://www.facebook.com">Facebook</a></li>
-					<li><a href="https://www.twitter.com">Twitter</a></li>
-					<li><a href="https://www.youtube.com">Youtube</a></li>
-					<li><a href="https://www.plus.google.com">Google+</a></li>
-					<li><a href="https://www.instagram.com">Instagram</a></li>
+					<li><a href="https://www.facebook.com/GuitarMania">Facebook</a></li>
+					<li><a href="https://www.twitter.com/GuitarMania">Twitter</a></li>
+					<li><a href="https://www.youtube.com/GuitarMania">Youtube</a></li>
+					<li><a href="https://www.plus.google.com/GuitarMania">Google+</a></li>
+					<li><a href="https://www.instagram.com/GuitarMania">Instagram</a></li>
 				</ul>
 			</div>
 			<div class="col-xs-3">
@@ -47,7 +47,7 @@
 	<br>
 	<div class="container">
 		<center>
-			<p>©2016-2017 GuitarMania.in, Inc. All Rights Reserved.</p>
+			<p>Copyright ©2016-2017 GuitarMania.in, Inc. All Rights Reserved.</p>
 		</center>
 	</div>
 </body>

@@ -9,6 +9,8 @@
 <script src="resources/js/bootstrap.min.js"></script>
 <link href='//fonts.googleapis.com/css?family=Freckle Face'
 	rel='stylesheet'>
+<link href='//fonts.googleapis.com/css?family=Sansita'
+	rel='stylesheet'>
 <title></title>
 <style>
 body {
@@ -21,7 +23,11 @@ body {
 
 .navbar-brand {
 	font-family: 'Freckle Face';
-	font-size: 35px;
+	font-size: 55px;
+}
+
+.navbar-nav {
+	font-family: 'Sansita';
 }
 </style>
 </head>
@@ -32,7 +38,7 @@ body {
 			<a class="navbar-brand" href="/shoppingCart" style="color: #000080">GUITARMANIA
 			</a>
 		</div>
-		<ul class="nav navbar-nav">
+		<ul class="nav navbar-nav" style="font-size: 20px">
 			<c:forEach items="${categoryList}" var="category">
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href=${category.name
@@ -49,7 +55,7 @@ body {
 					</ul></li>
 			</c:forEach>
 		</ul>
-		<ul class="nav navbar-nav navbar-right">
+		<ul class="nav navbar-nav navbar-right" style="font-size: 16px" >
 			<li class="divider-vertical"></li>
 			<c:if test="${pageContext.request.userPrincipal.name != null}">
 				<c:if
