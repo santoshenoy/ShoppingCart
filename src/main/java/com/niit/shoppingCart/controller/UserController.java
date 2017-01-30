@@ -5,13 +5,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.model.Category;
+import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.Supplier;
 import com.niit.shoppingcart.model.User;
 
@@ -37,6 +41,12 @@ public class UserController {
 
 	@Autowired
 	private Supplier supplier;
+
+	@Autowired
+	private ProductDAO productDAO;
+
+	@Autowired
+	private Product product;
 
 	@RequestMapping(value = "/user")
 	public String getUser() {
@@ -90,6 +100,112 @@ public class UserController {
 		model.addAttribute("categoryList", categoryDAO.list());
 		log.debug("End of the onLoad method");
 		return "home";
+	}
+
+	@RequestMapping("aboutus")
+	public String aboutUs(Model model) {
+		log.debug("Start of the aboutUs method");
+		model.addAttribute("categoryList", categoryDAO.list());
+		log.debug("End of the aboutUs method");
+		return "aboutus";
+	}
+
+	@RequestMapping("contactus")
+	public String contactUs(Model model) {
+		log.debug("Start of the contactUs method");
+		model.addAttribute("categoryList", categoryDAO.list());
+		log.debug("End of the contactUs method");
+		return "contactus";
+	}
+
+	@RequestMapping("careers")
+	public String careers(Model model) {
+		log.debug("Start of the careers method");
+		model.addAttribute("categoryList", categoryDAO.list());
+		log.debug("End of the careers method");
+		return "careers";
+	}
+
+	@RequestMapping("faq")
+	public String faq(Model model) {
+		log.debug("Start of the faq method");
+		model.addAttribute("categoryList", categoryDAO.list());
+		log.debug("End of the faq method");
+		return "faq";
+	}
+
+	@RequestMapping("terms")
+	public String terms(Model model) {
+		log.debug("Start of the terms method");
+		model.addAttribute("categoryList", categoryDAO.list());
+		log.debug("End of the terms method");
+		return "terms";
+	}
+
+	@RequestMapping("shippingquery")
+	public String shippingquery(Model model) {
+		log.debug("Start of the shippingquery method");
+		model.addAttribute("categoryList", categoryDAO.list());
+		log.debug("End of the shippingquery method");
+		return "shippingquery";
+	}
+
+	@RequestMapping("cancel")
+	public String cancellation(Model model) {
+		log.debug("Start of the cancel method");
+		model.addAttribute("categoryList", categoryDAO.list());
+		log.debug("End of the cancel method");
+		return "cancel";
+	}
+
+	@RequestMapping(value = "/Acoustic-{id}")
+	public ModelAndView getAcoustic(@PathVariable("id") String id, Model model) {
+		log.debug("Start of the getAcoustic method");
+		ModelAndView mv = new ModelAndView("productLand");
+		model.addAttribute("categoryList", categoryDAO.list());
+		mv.addObject("category", this.categoryDAO.get(id));
+		log.debug("End of the getAcoustic method");
+		return mv;
+	}
+
+	@RequestMapping(value = "/Electric-{id}")
+	public ModelAndView getElectric(@PathVariable("id") String id, Model model) {
+		log.debug("Start of the getElectric method");
+		ModelAndView mv = new ModelAndView("productLand");
+		model.addAttribute("categoryList", categoryDAO.list());
+		mv.addObject("category", this.categoryDAO.get(id));
+		log.debug("End of the getElectric method");
+		return mv;
+	}
+
+	@RequestMapping(value = "/Bass-{id}")
+	public ModelAndView getBass(@PathVariable("id") String id, Model model) {
+		log.debug("Start of the getBass method");
+		ModelAndView mv = new ModelAndView("productLand");
+		model.addAttribute("categoryList", categoryDAO.list());
+		mv.addObject("category", this.categoryDAO.get(id));
+		log.debug("End of the getBass method");
+		return mv;
+	}
+
+	@RequestMapping(value = "/Access-{id}")
+	public ModelAndView getAccessories(@PathVariable("id") String id, Model model) {
+		log.debug("Start of the getAccessories method");
+		ModelAndView mv = new ModelAndView("productLand");
+		model.addAttribute("categoryList", categoryDAO.list());
+		mv.addObject("category", this.categoryDAO.get(id));
+		log.debug("End of the getAccessories method");
+		return mv;
+	}
+
+	@RequestMapping(value = "/Amps-{id}")
+	public ModelAndView getAmplifiers(@PathVariable("id") String id, Model model) {
+		log.debug("Start of the getAmplifiers method");
+		ModelAndView mv = new ModelAndView("productLand");
+		model.addAttribute("categoryList", categoryDAO.list());
+		mv.addObject("category", this.categoryDAO.get(id));
+		log.debug("End of the getAmplifiers method");
+		return mv;
 	}
 
 }

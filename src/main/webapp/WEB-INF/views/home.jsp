@@ -65,6 +65,94 @@
 	</div>
 	<br>
 	<br>
+	<div class="container">
+		<br>
+		<h2 style="text-align: center">
+			<i>Check out what's Hot and Selling!</i>
+		</h2>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="floating-box">
+					<div class="item">
+						<a href="<c:url value='Acoustic-CAT_002'/>"> <img
+							src="<c:url value="/resources/images/Pic7.jpg"/>" width="500px"
+							height="350px">
+						</a>
+						<div class="carousel-caption">
+							<h1>
+								<a href="<c:url value='Acoustic-CAT_002'/>" style="color: powderblue"><i>ACOUSTIC</i></a>
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="floating-box">
+					<div class="item">
+						<a href="<c:url value='Electric-CAT_001'/>"> <img
+							src="<c:url value="/resources/images/Pic8.jpg"/>" width="500px"
+							height="350px">
+						</a>
+						<div class="carousel-caption">
+							<h1>
+								<a href="<c:url value='Electric-CAT_001'/>" style="color: blue"><i>ELECTRIC</i></a>
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="floating-box">
+					<div class="item">
+						<a href="<c:url value='Bass-CAT_004'/>"> <img
+							src="<c:url value="/resources/images/Pic9.jpg"/>" width="500px"
+							height="350px">
+						</a>
+						<div class="carousel-caption">
+							<h1>
+								<a href="<c:url value='Bass-CAT_004'/>" style="color: midnightblue"><i>BASS</i></a>
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="floating-box">
+					<div class="item">
+						<a href="<c:url value='Access-CAT_005'/>"> <img
+							src="<c:url value="/resources/images/Pic11.jpg"/>" width="500px"
+							height="350px">
+						</a>
+						<div class="carousel-caption">
+							<h1>
+								<a href="<c:url value='Access-CAT_005'/>" style="color: deepskyblue"><i>ACCESSORIES</i></a>
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6" style="align: center">
+				<div class="floating-box">
+					<div class="item">
+						<a href="<c:url value='Amps-CAT_003'/>"> <img
+							src="<c:url value="/resources/images/Pic10.jpg"/>" width="500px"
+							height="350px">
+						</a>
+						<div class="carousel-caption">
+							<h1>
+								<a href="<c:url value='Amps-CAT_003'/>" style="color: navy"><i>AMPLIFIERS</i></a>
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

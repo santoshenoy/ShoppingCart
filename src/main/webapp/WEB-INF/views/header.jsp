@@ -9,8 +9,7 @@
 <script src="resources/js/bootstrap.min.js"></script>
 <link href='//fonts.googleapis.com/css?family=Freckle Face'
 	rel='stylesheet'>
-<link href='//fonts.googleapis.com/css?family=Sansita'
-	rel='stylesheet'>
+<link href='//fonts.googleapis.com/css?family=Sansita' rel='stylesheet'>
 <title></title>
 <style>
 body {
@@ -55,7 +54,7 @@ body {
 					</ul></li>
 			</c:forEach>
 		</ul>
-		<ul class="nav navbar-nav navbar-right" style="font-size: 16px" >
+		<ul class="nav navbar-nav navbar-right" style="font-size: 16px">
 			<li class="divider-vertical"></li>
 			<c:if test="${pageContext.request.userPrincipal.name != null}">
 				<c:if
@@ -68,7 +67,7 @@ body {
 					<li><a style="color: navy" href="<c:url value="/admin" />">VIEW
 							ALL</a></li>
 				</c:if>
-				<li><a style="color: navy">HELLO,
+				<li><a style="color: navy">Hello,
 						${pageContext.request.userPrincipal.name}</a></li>
 				<li><a style="color: navy; margin: 0px 0px 0px 0px"
 					href="<c:url value="/j_spring_security_logout" />"> <span

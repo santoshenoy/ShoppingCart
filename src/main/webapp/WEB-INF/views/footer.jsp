@@ -16,9 +16,9 @@
 				<ul style="list-style-type: none">
 					<li style="font-size: 15px"><strong> The Company: </strong></li>
 					<br>
-					<li><a href="aboutus.jsp">About Us</a></li>
-					<li><a href="contactus.jsp">Contact Us</a></li>
-					<li><a href="careers.jsp">Careers</a></li>
+					<li><a href="aboutus">About Us</a></li>
+					<li><a href="contactus">Contact Us</a></li>
+					<li><a href="careers">Careers</a></li>
 				</ul>
 			</div>
 			<div class="col-xs-3">
@@ -36,10 +36,10 @@
 				<ul style="list-style-type: none">
 					<li style="font-size: 15px"><strong> Policy Details: </strong></li>
 					<br>
-					<li><a href="faq.jsp">FAQ</a></li>
-					<li><a href="terms.jsp">Terms & Conditions</a></li>
-					<li><a href="shipping.jsp">Shipping</a></li>
-					<li><a href="faq.jsp">Cancellation & Returns</a></li>
+					<li><a href="faq">FAQ</a></li>
+					<li><a href="terms">Terms & Conditions</a></li>
+					<li><a href="shippingquery">Shipping</a></li>
+					<li><a href="cancel">Cancellation & Returns</a></li>
 				</ul>
 			</div>
 		</div>

@@ -9,6 +9,12 @@
 	<security:http auto-config="true" use-expressions="true">
 		<security:intercept-url access="hasRole('ROLE_ADMIN')"
 			pattern="/admin" />
+		<security:intercept-url access="hasRole('ROLE_ADMIN')"
+			pattern="/product" />
+			<security:intercept-url access="hasRole('ROLE_ADMIN')"
+			pattern="/category" />
+			<security:intercept-url access="hasRole('ROLE_ADMIN')"
+			pattern="/supplier" />
 		<security:intercept-url access="hasRole('ROLE_USER')"
 			pattern="/user" />
 		<security:intercept-url access="hasRole('ROLE_USER')"

@@ -53,7 +53,7 @@
 											<input type="text" class="form-control input-sm"
 												value="${cart.quantity}">
 										</div>
-										<div class="col-xs-6">
+										<div class="col-xs-1">
 											<a href="<c:url value='cart/delete/${cart.id}' />"><button
 													type="button" class="btn btn-link btn-xs"
 													title="Remove this item from your cart">
@@ -64,15 +64,6 @@
 								</div>
 								<hr>
 							</c:forEach>
-							<div class="row">
-								<div class="text-center">
-									<div class="col-xs-5">
-										<a href="<c:url value="/myCart" />" type="button"
-											class="btn btn-primary btn-sm btn-block"
-											title="Update Your Cart"> UPDATE CART </a>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="panel-footer">
 							<div class="row text-center">
