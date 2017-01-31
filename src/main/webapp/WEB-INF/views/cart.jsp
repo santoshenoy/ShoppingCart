@@ -54,7 +54,7 @@
 												value="${cart.quantity}">
 										</div>
 										<div class="col-xs-1">
-											<a href="<c:url value='cart/delete/${cart.id}' />"><button
+											<a href="<c:url value='cart/delete/${cart.u_id}' />"><button
 													type="button" class="btn btn-link btn-xs"
 													title="Remove this item from your cart">
 													<span class="glyphicon glyphicon-trash"> </span>

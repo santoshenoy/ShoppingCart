@@ -3,6 +3,7 @@ package com.niit.shoppingCart.controller;
 import java.security.Principal;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,6 +50,9 @@ public class CartController {
 
 	@Autowired(required = true)
 	private User user;
+
+	@Autowired
+	private HttpSession session;
 
 	@RequestMapping(value = "/myCart", method = RequestMethod.GET)
 	public String myCart(Model model, Principal principal) {
@@ -136,6 +140,9 @@ public class CartController {
 	@RequestMapping("/thanks")
 	public String getThanks(Model model) {
 		log.debug("Beginning of the getThanks method");
+		String n = session.getAttribute("user_email").toString();
+		log.info("User name while deleting cart......" + n);
+		cartDAO.deleteCartByUser(n);
 		model.addAttribute("categoryList", this.categoryDAO.list());
 		log.debug("Ending of the getThanks method");
 		return "thanks";

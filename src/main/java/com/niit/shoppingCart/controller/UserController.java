@@ -1,5 +1,9 @@
 package com.niit.shoppingCart.controller;
 
+import java.security.Principal;
+
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,10 +91,22 @@ public class UserController {
 	}
 
 	@RequestMapping("/")
-	public String homePage(Model model) {
+	public String homePage(Model model, HttpSession session, Principal principal) {
 		log.debug("Start of the homePage method");
+
 		model.addAttribute("categoryList", categoryDAO.list());
-		log.debug("End of the homePage method");
+		try {
+			String name = principal.getName();
+			System.out.println("User - " + name);
+			session.setAttribute("user_email", name);
+			user = userDAO.getUser(name);
+			String n1 = user.getName();
+			session.setAttribute("user_name", user.getName());
+			log.info("UserName: " + session.getAttribute("user_name"));
+			log.debug("End of the homePage method");
+		} catch (Exception e) {
+			System.out.println("");
+		}
 		return "home";
 	}
 
@@ -185,16 +201,6 @@ public class UserController {
 		model.addAttribute("categoryList", categoryDAO.list());
 		mv.addObject("category", this.categoryDAO.get(id));
 		log.debug("End of the getBass method");
-		return mv;
-	}
-
-	@RequestMapping(value = "/Access-{id}")
-	public ModelAndView getAccessories(@PathVariable("id") String id, Model model) {
-		log.debug("Start of the getAccessories method");
-		ModelAndView mv = new ModelAndView("productLand");
-		model.addAttribute("categoryList", categoryDAO.list());
-		mv.addObject("category", this.categoryDAO.get(id));
-		log.debug("End of the getAccessories method");
 		return mv;
 	}
 

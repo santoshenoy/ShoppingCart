@@ -18,6 +18,8 @@
 		<security:intercept-url access="hasRole('ROLE_USER')"
 			pattern="/user" />
 		<security:intercept-url access="hasRole('ROLE_USER')"
+			pattern="/myCart" />
+			<security:intercept-url access="hasRole('ROLE_USER')"
 			pattern="/cart/add/{id}" />
 		<security:form-login login-processing-url="/j_spring_security_check"
 			password-parameter="password" username-parameter="username"

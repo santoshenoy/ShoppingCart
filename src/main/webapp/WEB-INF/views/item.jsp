@@ -40,7 +40,7 @@ body {
 								<td align="left"><font color="black">$${selectedProduct.price}</font></td>
 								<td align="left"><font color="black">${selectedProduct.supplier.name}</font></td>
 								<td align="left"><font color="black">${selectedProduct.stock}</font></td>
-								<td align="left"><img style="width: 200px; height: 200px"
+								<td align="left"><img style="width: 500px; height: 500px"
 									src="<c:url value="/resources/images/${selectedProduct.id}.jpg"/>" /></td>
 							</tr>
 						</table>

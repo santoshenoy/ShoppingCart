@@ -66,9 +66,12 @@ body {
 					test="${pageContext.request.userPrincipal.name  == 'santoshenoy@gmail.com'}">
 					<li><a style="color: navy" href="<c:url value="/admin" />">VIEW
 							ALL</a></li>
+					<li><a style="color: navy">Hello Admin!</a></li>
 				</c:if>
-				<li><a style="color: navy">Hello,
-						${pageContext.request.userPrincipal.name}</a></li>
+				<c:if
+					test="${pageContext.request.userPrincipal.name != 'santoshenoy@gmail.com'}">
+					<li><a style="color: navy">Hello, ${user_name}!</a></li>
+				</c:if>
 				<li><a style="color: navy; margin: 0px 0px 0px 0px"
 					href="<c:url value="/j_spring_security_logout" />"> <span
 						class="glyphicon glyphicon-log-out"></span> Log Out
