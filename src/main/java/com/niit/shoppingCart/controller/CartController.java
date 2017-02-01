@@ -51,7 +51,7 @@ public class CartController {
 	@Autowired(required = true)
 	private User user;
 
-	@Autowired
+	@Autowired(required = true)
 	private HttpSession session;
 
 	@RequestMapping(value = "/myCart", method = RequestMethod.GET)
@@ -81,7 +81,8 @@ public class CartController {
 	}
 
 	@RequestMapping(value = "cart/add/{id}", method = RequestMethod.GET)
-	public String addToCart(@PathVariable("id") String id, HttpServletRequest request, Principal principal) {
+	public String addToCart(@PathVariable("id") String id, HttpServletRequest request, Principal principal,
+			HttpSession session) {
 		log.debug("Beginning of the addToCart method");
 		try {
 			Product product = productDAO.get(id);
@@ -91,8 +92,15 @@ public class CartController {
 			cart.setP_name(product.getName());
 			cart.setQuantity(1);
 			cart.setU_id(principal.getName());
-			cart.setStatus("N");
+			cart.setStatus("Added to Cart");
 			cartDAO.addCart(cart);
+			int s = 0;
+			try {
+				s = cartDAO.userCartList(principal.getName()).size();
+			} catch (Exception e) {
+				log.info("Error");
+			}
+			session.setAttribute("cartSize", s);
 		} catch (Exception e) {
 			log.debug(e.getMessage());
 		}
@@ -121,9 +129,16 @@ public class CartController {
 	}
 
 	@RequestMapping("/cart/delete/{id}")
-	public String deleteCart(@PathVariable("id") int id, Model model) {
+	public String deleteCart(@PathVariable("id") int id, Model model, Principal principal, HttpSession session) {
 		log.debug("Beginning of the deleteCart method");
 		cartDAO.deleteCart(id);
+		int s = 0;
+		try {
+			s = cartDAO.userCartList(principal.getName()).size();
+		} catch (Exception e) {
+			log.info("Error");
+		}
+		session.setAttribute("cartSize", s);
 		log.debug("Ending of the deleteCart method");
 		return "redirect:/myCart";
 	}

@@ -26,10 +26,17 @@ form {
 	border: 3px solid #f1f1f1;
 	width: 25%;
 	margin: 0 auto;
+	box-shadow: 5px 5px 5px #888888;
 }
 
 .container {
 	padding: 16px;
+}
+
+.message {
+	margin: 15px 0 0;
+	color: #b3b3b3;
+	font-size: 12px;
 }
 </style>
 </head>
@@ -44,6 +51,9 @@ form {
 				required> <br>
 			<button type="submit" class="btn btn-success" style="width: 27%"
 				title="Click to Log In">Log In</button>
+			<p class="message" style="color: black">
+				Not registered? <a href="<c:url value="register" />">Create an account</a>
+			</p>
 		</div>
 		<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />

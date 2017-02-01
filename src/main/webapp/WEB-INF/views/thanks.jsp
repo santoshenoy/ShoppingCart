@@ -21,7 +21,7 @@
 	<div class="container">
 		<br>
 		<h2 style="text-align: center">
-			<i>Check out what's Hot and Selling!</i>
+			<i>The Hottest on the Planet!</i>
 		</h2>
 		<br>
 		<div class="row">

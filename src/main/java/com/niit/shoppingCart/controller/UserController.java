@@ -67,19 +67,23 @@ public class UserController {
 
 	@RequestMapping(value = "/login")
 	public String login(@RequestParam(value = "error", required = false) String error,
-			@RequestParam(value = "logout", required = false) String logout, Model model) {
+			@RequestParam(value = "logout", required = false) String logout, Model model, HttpSession session) {
 		log.debug("Start of the login method");
 		model.addAttribute("categoryList", categoryDAO.list());
-		if (error != null) {
-			log.debug("Error");
-			model.addAttribute("loginerror", "Invalid username and/or password");
+		if (session.getAttribute("user_name") != null) {
+			return "redirect:/";
+		} else {
+			if (error != null) {
+				log.debug("Error");
+				model.addAttribute("loginerror", "Invalid username and/or password");
+			}
+			if (logout != null) {
+				log.debug("Logout Called");
+				model.addAttribute("loginmsg", "You have logged out");
+			}
+			log.debug("End of the login method");
+			return "login";
 		}
-		if (logout != null) {
-			log.debug("Logout Called");
-			model.addAttribute("loginmsg", "You have logged out");
-		}
-		log.debug("End of the login method");
-		return "login";
 	}
 
 	@RequestMapping("/register")

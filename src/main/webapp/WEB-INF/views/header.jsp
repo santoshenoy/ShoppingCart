@@ -60,7 +60,8 @@ body {
 				<c:if
 					test="${pageContext.request.userPrincipal.name != 'santoshenoy@gmail.com'}">
 					<li><a href="<c:url value="/myCart" />" style="color: navy"><span
-							class="glyphicon glyphicon-shopping-cart" style="color: navy"></span>CART</a>${cartSize}</li>
+							class="glyphicon glyphicon-shopping-cart" style="color: navy"></span>CART
+							(${cartSize}) </a></li>
 				</c:if>
 				<c:if
 					test="${pageContext.request.userPrincipal.name  == 'santoshenoy@gmail.com'}">

@@ -28,6 +28,7 @@ form {
 	border: 3px solid #f1f1f1;
 	width: 37%;
 	margin: 0 auto;
+	box-shadow: 5px 5px 5px #888888;
 }
 
 .container {
