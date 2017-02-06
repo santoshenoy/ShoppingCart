@@ -12,15 +12,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-5">
-				<p style="font-size: 20px">Please do write to me with
-					suggestions/feedback. Also please keep in touch through Facebook,
-					Twitter and Instagram, the links of which have been provided in the
-					footer below!</p>
-				<p style="font-size: 20px">
-					<span class="glyphicon glyphicon-phone"></span> +91 9901357651
+				<p style="font-size: 20px; color: gold">Please do write to me
+					with suggestions/feedback. Also please keep in touch through
+					Facebook, Twitter and Instagram, the links of which have been
+					provided in the footer below!</p>
+				<p style="font-size: 20px; color: gold">
+					<span class="glyphicon glyphicon-phone" style="color: white"></span>
+					+91 9901357651
 				</p>
-				<p style="font-size: 20px">
-					<span class="glyphicon glyphicon-envelope"></span>
+				<p style="font-size: 20px; color: gold">
+					<span class="glyphicon glyphicon-envelope" style="color: white"></span>
 					santoshenoy@gmail.com
 				</p>
 			</div>

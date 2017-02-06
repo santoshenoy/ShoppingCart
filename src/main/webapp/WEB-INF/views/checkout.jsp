@@ -3,7 +3,8 @@
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<link href='//fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+<link href='//fonts.googleapis.com/css?family=Architects Daughter'
+	rel='stylesheet'>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -13,7 +14,7 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<h1 style="font-family: 'Architects Daughter'">
-		<center>REVIEW ORDER</center>
+		<center style="color: white">REVIEW ORDER</center>
 	</h1>
 	<div class="container" style="align: center; margin: 80px 230px">
 		<c:if test="${!empty cartList}">
@@ -32,8 +33,8 @@
 									</div>
 									<div class="col-xs-6">
 										<a href="<c:url value="/myCart" />" type="button"
-											class="btn btn-primary btn-sm btn-block" title="Go back to Edit your Cart">EDIT CART
-										</a>
+											class="btn btn-primary btn-sm btn-block"
+											title="Go back to Edit your Cart">EDIT CART </a>
 									</div>
 								</div>
 							</div>

@@ -12,6 +12,7 @@
 	max-height: 502px;
 	overflow: hidden;
 }
+
 </style>
 </head>
 <body>
@@ -67,8 +68,8 @@
 	<br>
 	<div class="container">
 		<br>
-		<h2 style="text-align: center">
-			<i>Check out what's Hot and Selling!</i>
+		<h2 style="text-align: center; color: gold">
+			<i><strong>Check out what's Hot and Selling!</strong></i>
 		</h2>
 		<br>
 		<div class="row">

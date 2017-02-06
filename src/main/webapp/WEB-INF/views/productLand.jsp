@@ -20,15 +20,21 @@
 			</div>
 			<div class="col-xs-4">
 				<h2>
-					<a href="<c:url value='product/get/${product.id}'/>">${product.name}</a>
+					<a href="<c:url value='product/get/${product.id}'/>"><p
+							style="color: white">${product.name}</p></a>
 				</h2>
-				<br>${product.description}
+				<br>
+				<p style="color: gold">${product.description}</p>
 			</div>
 			<div class="col-xs-2"></div>
 			<div class="col-xs-3">
 				<p style="text-align: center">
-				<h2>$ ${product.price}</h2>
-				<br> <strong>Stock</strong> <br>${product.stock} remaining
+				<h2>
+					<p style="color: white">$ ${product.price}</p>
+				</h2>
+				<br> <strong><p style="color: gold">Stock</strong> <br>${product.stock}
+				remaining
+				</p>
 				<br>
 			</div>
 		</div>

@@ -13,7 +13,10 @@
 <title></title>
 <style>
 body {
-	background-color: lemonchiffon;
+	background: url(resources/images/Background.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
 }
 
 .navbar-default {

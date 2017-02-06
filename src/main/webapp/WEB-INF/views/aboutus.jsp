@@ -15,14 +15,14 @@
 	<br>
 	<br>
 	<div class="container">
-		<p style="font-size: 25px">GuitarMania is where your musical
-			dreams come true, where your musical journey begins. GuitarMania was
-			founded by Santosh Shenoy, an Electronics and Communication engineer
-			from Bengaluru, India with a deep passion for music and coding.
-			Santosh is an amateur guitarist himself.</p>
+		<p style="font-size: 25px; color: gold">GuitarMania is where your
+			musical dreams come true, where your musical journey begins.
+			GuitarMania was founded by Santosh Shenoy, an Electronics and
+			Communication engineer from Bengaluru, India with a deep passion for
+			music and coding. Santosh is an amateur guitarist himself.</p>
 
-		<p style="font-size: 25px">Our wide range of guitar related
-			products will ensure that you get the best in the market. We
+		<p style="font-size: 25px; color: gold">Our wide range of guitar
+			related products will ensure that you get the best in the market. We
 			constantly strive to provide quality products without any compromise.
 			Customer satisfaction is our number one priority. We want to ensure
 			that at the end of the day you have your best-suited instrument to

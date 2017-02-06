@@ -13,30 +13,34 @@
 <script src="<c:url value="resources/js/jquery.min.js"/>"></script>
 <title>Category Page</title>
 <style>
-form {
-	background-color: lightsteelblue;
-	border: 3px solid #f1f1f1;
-}
-
-button {
+.button {
 	background-color: green;
 	color: white;
-	padding: 14px 20px; margin 8px 0;
+	padding: 14px 70px;
+	display: block;
+	margin: auto;
+	text-align: center;
 	border: none;
 	cursor: pointer;
-	width: 10%;
+	width: 30%;
 }
 
 input[type=text] {
-	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
 	display: inline-block;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
+	width: 80%;
 }
 
 table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 50%;
+}
+
+.tble {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
@@ -45,18 +49,30 @@ table {
 td, th {
 	text-align: center;
 	border: 1px solid #dddddd;
-	padding: 15px;
+	padding: 10px;
 }
 
-tr:nth-child(even) {
+tr {
+	background-color: lightsteelblue;
+}
+
+.tble td, th {
+	border: 1px solid black;
+}
+
+.tble tr:nth-child(odd) {
 	background-color: #dddddd;
+}
+
+.tble tr:nth-child(even) {
+	background-color: lemonchiffon;
 }
 </style>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<form:form action="category/add" commandName="category" method="post">
-		<table class="table table-condensed">
+		<table>
 			<tr>
 				<td><label>ID</label></td>
 				<c:choose>
@@ -72,8 +88,7 @@ tr:nth-child(even) {
 			</tr>
 			<tr>
 				<form:input
-					style="background-color: lightsteelblue
-					; color:lightsteelblue"
+					style="background: url(resources/images/Background.jpg); width: 0%; border: 1px solid maroon"
 					path="id" hidden="true" readonly="true" />
 				<td><label>NAME</label></td>
 				<td><form:input path="name" type="text"
@@ -96,7 +111,8 @@ tr:nth-child(even) {
 			</tr>
 		</table>
 	</form:form>
-	<table>
+	<br>
+	<table class="tble">
 		<tr>
 			<th>ID</th>
 			<th>NAME</th>

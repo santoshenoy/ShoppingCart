@@ -12,11 +12,6 @@
 <script src="<c:url value="resources/js/jquery.min.js"/>"></script>
 <title>Product Page</title>
 <style>
-form {
-	background-color: lightsteelblue;
-	border: 3px solid #f1f1f1;
-}
-
 .button {
 	background-color: green;
 	color: white;
@@ -30,15 +25,21 @@ form {
 }
 
 input[type=text] {
-	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
 	display: inline-block;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
+	width: 80%;
 }
 
 table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 50%;
+}
+
+.tble {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
@@ -48,11 +49,22 @@ td, th {
 	text-align: center;
 	border: 1px solid #dddddd;
 	padding: 10px;
-	border: 1px solid #dddddd;
 }
 
-tr:nth-child(even) {
+tr {
+	background-color: lightsteelblue;
+}
+
+.tble td, th {
+	border: 1px solid black;
+}
+
+.tble tr:nth-child(odd) {
 	background-color: #dddddd;
+}
+
+.tble tr:nth-child(even) {
+	background-color: lemonchiffon;
 }
 </style>
 </head>
@@ -76,8 +88,7 @@ tr:nth-child(even) {
 			</tr>
 			<tr>
 				<form:input
-					style="background-color: lightsteelblue
-					; color:lightsteelblue"
+					style="background: url(resources/images/Background.jpg); width: 0%; border: 1px solid maroon"
 					path="id" hidden="true" readonly="true" />
 				<td><label> NAME </label></td>
 				<td><form:input path="name" type="text"
@@ -125,7 +136,7 @@ tr:nth-child(even) {
 			</tr>
 		</table>
 	</form:form>
-
+	<br>
 	<table class="tble">
 		<tr>
 			<th>ID</th>

@@ -12,15 +12,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-5">
-				<p style="font-size: 20px">
-					Please mail us your updated resumes to <strong>careers@guitarmania.com</strong>.
+				<p style="font-size: 20px; color: gold">
+					Please mail us your updated resumes to <strong style="color: white">careers@guitarmania.com</strong>.
 					Please mention in the mail the role you are applying to from the
 					list of vacancies below.
 				</p>
-				<p style="font-size: 20px">
-					We currently have vacancies for the <strong><i>following</i></strong>
-					positions: <br> </p>
-				<ul style="font-size: 20px">
+				<p style="font-size: 20px; color: gold">
+					We currently have vacancies for the <strong><i
+						style="color: white">following</i></strong> positions: <br>
+				</p>
+				<ul style="font-size: 20px; color: gold">
 					<li>Associate Software Engineer</li>
 					<li>Sales Manager</li>
 					<li>Senior Software Engineer</li>

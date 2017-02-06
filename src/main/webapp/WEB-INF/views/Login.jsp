@@ -52,8 +52,12 @@ form {
 			<button type="submit" class="btn btn-success" style="width: 27%"
 				title="Click to Log In">Log In</button>
 			<p class="message" style="color: black">
-				Not registered? <a href="<c:url value="register" />">Create an account</a>
+				Not registered? <a href="<c:url value="register" />">Create an
+					account</a>
 			</p>
+			<c:if test='${not empty "${loginerror}"}'>
+				<p style="color: red">${loginerror}</p>
+			</c:if>
 		</div>
 		<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />

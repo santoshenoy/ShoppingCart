@@ -59,7 +59,7 @@ form {
 			<form:input type="text" placeholder="Enter CVV Number"
 				name="card_cvv" path="card_cvv" required="true" />
 			<br> <br> <label><b>CARD EXPIRATION DATE:</b></label> <br>
-			<form:select path="card_exp" name="card_exp">
+			<form:select path="card_exp" name="card_exp" required="true">
 				<option value="">Month</option>
 				<option value="01">01</option>
 				<option value="02">02</option>
@@ -74,7 +74,7 @@ form {
 				<option value="11">11</option>
 				<option value="12">12</option>
 			</form:select>
-			<form:select path="card_exp" name="card_exp">
+			<form:select path="card_exp" name="card_exp" required="true">
 				<option value="">Year</option>
 				<option value="2017">2017</option>
 				<option value="2018">2018</option>

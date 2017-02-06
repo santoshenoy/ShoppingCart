@@ -10,10 +10,12 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<label style="font-size: 30px; margin: 50px 0px 0px 120px">YOUR
+	<label
+		style="font-size: 30px; margin: 50px 0px 0px 120px; color: white">YOUR
 		ORDER HAS BEEN RECEIVED!</label>
 	<br>
-	<label style="font-size: 20px; margin: 30px 0px 0px 120px">Thank
+	<label
+		style="font-size: 20px; margin: 30px 0px 0px 120px; color: white">Thank
 		you for your purchase! You will receive an Email with further shipping
 		and delivery details. Check out some more of our products below: </label>
 	<br>
@@ -21,7 +23,7 @@
 	<div class="container">
 		<br>
 		<h2 style="text-align: center">
-			<i>The Hottest on the Planet!</i>
+			<i style="color: gold">The Hottest on the Planet!</i>
 		</h2>
 		<br>
 		<div class="row">
