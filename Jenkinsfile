@@ -1,4 +1,4 @@
-build 'Welcome'
+//build 'Welcome'
 echo 'starting program'
 javac Welcome.java
 echo 'compilation cmptd'
